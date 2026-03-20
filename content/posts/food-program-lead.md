@@ -5,13 +5,11 @@ weight: 60
 draft: false
 categories: ["product", "data"]
 tags: ["Supply Chain", "Operations Management", "Data Analysis", "Logistics"]
-ascii_cover: |
-        ___________
-       /_/_/_/_/_/|
-      |  BOX  BOX ||
-      |  BOX  BOX ||
-      |  FLOW  -> ||
-      |___________|/
+ascii_cover: |-
+  .-SUPPLY----.
+  BOX  BOX  BOX
+  FLOW ---> OPS
+  STOCK  ROUTE
 ---
 
 ## Operations Management & Supply Chain Optimization

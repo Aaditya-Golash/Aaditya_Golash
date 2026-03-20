@@ -6,14 +6,11 @@ draft: false
 categories: ["swe", "product"]
 tags: ["Flask", "MySQL", "Docker", "Agile"]
 description: "Redesigning administrative workflows for the UBC CS Department: 70% reduction in allocation latency."
-ascii_cover: |
-    +----------------------+
-    | TA | TA | TA | TA   |
-    +----------------------+
-    | [] | <> | OK | !!   |
-    +----------------------+
-    | RBAC | SLOT | TEST  |
-    +----------------------+
+ascii_cover: |-
+  .-TA-ALLOC--.
+  TA  TA  TA
+  SLOT  RBAC
+  TEST  DEPLOY
 ---
 
 > `> LOG_ENTRY: CAPSTONE_PROJECT_04`

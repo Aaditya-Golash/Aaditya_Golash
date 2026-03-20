@@ -5,14 +5,11 @@ weight: 40
 draft: false
 categories: ["swe", "data", "product"]
 tags: ["Certifications", "Enterprise Data", "Automation", "Financial Markets"]
-ascii_cover: |
-       _____________
-      |  CERTIFIED  |
-      |-------------|
-      | AEP  BMC    |
-      | ZAPIER AI   |
-      |______*______|
-             \/
+ascii_cover: |-
+  .-CERTS----.
+  AEP   BMC
+  ZAPIER AI
+  VERIFIED
 ---
 
 ## Enterprise Technical Certifications

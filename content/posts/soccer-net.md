@@ -5,14 +5,11 @@ weight: 10
 draft: false
 categories: ["swe", "data"]
 tags: ["PyTorch", "Computer Vision", "Python"]
-ascii_cover: |
-       ___________
-      /  _   _   /|
-     /  /_| /_| / |
-    /__________/  |
-    |  _   _  |  /
-    | /_| /_| | /
-    |_________|/
+ascii_cover: |-
+  .-JERSEY--.
+  [ 10 ] [ 7 ]
+  /_/_/\_/_/\
+  SPEED  VISION
 ---
 
 A deep learning project on soccer jersey detection and player analysis using PyTorch and custom dataset engineering. This demonstrates model architecture, training pipelines, and production-readiness for algorithms in fast-paced domains.

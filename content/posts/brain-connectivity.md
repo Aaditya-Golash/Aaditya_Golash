@@ -5,16 +5,12 @@ weight: 10
 draft: false
 categories: ["data", "swe"]
 tags: ["EEG", "Signal Processing", "Python", "Network Analysis", "wPLI"]
-ascii_cover: |
-        .-''''-.
-      .'  .-.  '.
-     /   (   )   \
-    ;  .-`-'-.  .-;
-    | /  .-.  \/ /|
-    ; | (   ) | | ;
-     \ \ `-' / / /
-      '._'-'_.'
-         /_\
+ascii_cover: |-
+  .--BRAIN--.
+  (  o  o   )
+  ( o  o  o )
+  (   o  o  )
+  '--NET----'
 ---
 
 ## High-Dimensional Signal Processing: EEG Connectivity Networks
