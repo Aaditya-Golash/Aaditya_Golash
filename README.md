@@ -60,7 +60,7 @@ hugo --minify
 ## Deployment
 
 - Repository: `Aaditya-Golash/my-portfolio`
-- Branch: `master`
+- Branch: `main`
 - URL: `https://aadityagolash.github.io/`
 
 Publishing is done by pushing to the repository's deployment branch/workflow setup.
