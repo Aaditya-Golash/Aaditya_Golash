@@ -17,8 +17,8 @@ Developed a comprehensive EEG analysis pipeline that transforms raw 64-channel b
 - **Network Construction**: Built adjacency matrices representing brain connectivity patterns
 - **Visualization**: Created interactive network graphs showing functional brain networks
 
-### Pattern Recognition Logic
-Drawing from ancient geometric traditions, this project applies recursive pattern recognition to biological signals. Just as Islamic Girih tiles create complex patterns from simple geometric rules, the wPLI algorithm transforms noisy EEG data into meaningful connectivity maps - a modern evolution of recognizing order in apparent chaos.
+### Why It Matters
+This project required turning noisy biological signals into something stable enough to analyze. The main challenge was less about building a model in isolation and more about creating a pipeline that could clean data, reduce artifacts, and produce connectivity outputs that were actually usable.
 
 ### Key Achievements
 - Successfully handled high-dimensional signal data (64 channels × time series)

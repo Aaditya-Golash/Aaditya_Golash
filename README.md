@@ -2,7 +2,7 @@
 
 ## The Logic of the Silk Road
 
-A modular, recruiter-focused portfolio built with Hugo, featuring authentic Indo-Middle Eastern geometric logic and retro-futuristic aesthetics.
+A modular, focused portfolio built with Hugo, featuring authentic Indo-Middle Eastern geometric logic and retro-futuristic aesthetics.
 
 ## Architecture
 
