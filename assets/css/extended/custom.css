@@ -1,0 +1,222 @@
+/* Terminal palette applied consistently across the site. */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
+    --theme: #050805;
+    --entry: #0b110b;
+    --primary: #00ff41;
+    --secondary: #8db99a;
+    --tertiary: #17311c;
+    --content: #d7ffe0;
+    --code-block-bg: #0d150e;
+    --code-bg: #0a120b;
+    --border: #1f4a28;
+    color-scheme: dark;
+}
+
+body,
+.list,
+[data-theme="dark"] .list {
+    background-color: var(--theme) !important;
+    color: var(--content);
+    background-image:
+        linear-gradient(30deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
+        linear-gradient(150deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
+        linear-gradient(30deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
+        linear-gradient(150deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
+        linear-gradient(60deg, #101810 25%, transparent 25.5%, transparent 75%, #101810 75%, #101810),
+        linear-gradient(60deg, #101810 25%, transparent 25.5%, transparent 75%, #101810 75%, #101810);
+    background-size: 80px 140px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.14) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.28;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: "Courier New", Courier, monospace;
+}
+
+body,
+.post-content,
+.entry-content,
+.post-meta,
+.entry-footer,
+.footer,
+.breadcrumbs {
+    color: var(--content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.logo a,
+#menu a,
+a {
+    color: var(--primary) !important;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.8);
+}
+
+.post-entry,
+.first-entry,
+.toc,
+.paginav,
+.post-tags a,
+.share-buttons {
+    background: rgba(6, 12, 7, 0.92);
+    border-color: var(--border);
+}
+
+pre,
+code,
+.post-content pre code {
+    background-color: var(--code-block-bg) !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--border);
+}
+
+.page-header .post-description,
+.page-header .post-description a {
+    color: var(--primary) !important;
+}
+
+.nav {
+    justify-content: flex-start !important;
+    gap: 2rem;
+}
+
+.logo {
+    margin-right: 1rem;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #000 !important;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.retro-container {
+    border: 1px solid var(--border);
+    padding: 2rem;
+    background: rgba(11, 17, 11, 0.94);
+    color: var(--content);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+
+.status-text {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.retro-form label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.retro-form input,
+.retro-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--content);
+    padding: 0.5rem 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.retro-form input:focus,
+.retro-form textarea:focus {
+    border-bottom: 1px solid var(--primary);
+}
+
+.retro-form input::placeholder,
+.retro-form textarea::placeholder {
+    color: #7aa485;
+}
+
+.retro-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.retro-btn:hover,
+.retro-btn:focus-visible {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.35);
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.resume-section h3,
+.resume-link {
+    color: var(--primary) !important;
+    font-weight: bold;
+}
+
+.resume-link:hover {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+}
+
+.resume-note {
+    font-size: 0.7rem;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+}

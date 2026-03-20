@@ -1,0 +1,60 @@
+baseURL = "https://aadityagolash.github.io/"
+languageCode = "en-us"
+title = "Aaditya Golash"
+theme = "PaperMod"
+
+[params]
+    env = "production"
+    title = "Aaditya Golash"
+    description = "Computer Science @ UBC | Management Minor | $1.9M Budget Oversight"
+    author = "Aaditya"
+    defaultTheme = "dark"
+    disableThemeToggle = true
+
+    [params.profileMode]
+        enabled = true
+        title = "Aaditya Golash"
+        subtitle = "Final-year CS @ UBC. Engineered a $1.9M budget oversight system and built PyTorch pipelines for biometric data analysis."
+        displayFullContent = false
+
+        [[params.profileMode.buttons]]
+            name = "View My Work"
+            url = "posts"
+
+    [[params.socialIcons]]
+        name = "linkedin"
+        url = "https://linkedin.com/in/aaditya-golash"
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/Aaditya-Golash"
+
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        weight = 5
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+        weight = 10
+    [[menu.main]]
+        name = "Software Engineering"
+        url = "/categories/swe"
+        weight = 20
+    [[menu.main]]
+        name = "Quant & Data"
+        url = "/categories/data"
+        weight = 30
+    [[menu.main]]
+        name = "Product & Strategy"
+        url = "/categories/product"
+        weight = 40
+    [[menu.main]]
+        name = "Contact"
+        url = "/contact"
+        weight = 50
+
+[markup.goldmark.renderer]
+  unsafe = true
