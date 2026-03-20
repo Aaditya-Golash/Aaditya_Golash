@@ -9,7 +9,7 @@ theme = "PaperMod"
     description = "Computer Science @ UBC | Management Minor | $1.9M Budget Oversight"
     author = "Aaditya"
     defaultTheme = "dark"
-    disableThemeToggle = true
+    disableThemeToggle = false
 
     [params.profileMode]
         enabled = true

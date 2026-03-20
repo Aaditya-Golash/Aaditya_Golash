@@ -23,8 +23,8 @@ Founded and developed VenueWorks, a marketplace platform connecting commercial s
 - **Competitive Positioning**: Differentiated through focus on SMB event organizers and local venues
 - **Go-to-Market**: Executed launch strategy targeting university communities and local businesses
 
-### The Digital Bazaar
-VenueWorks represents the evolution of traditional marketplace dynamics into digital trust networks. Drawing from ancient bazaar principles of reputation and relationship-building, the platform creates algorithmic trust through data-driven validation - where modern cryptography meets traditional marketplace wisdom.
+### Marketplace Design
+VenueWorks was an exercise in building trust into a two-sided platform. The main challenge was not just creating listings, but designing a product that made it easier for space providers and event organizers to evaluate each other, transact clearly, and reduce friction in the booking process.
 
 ### Achievements
 - Secured $1,500 seed funding through compelling business case

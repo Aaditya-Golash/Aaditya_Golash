@@ -1,6 +1,5 @@
-/* Terminal palette applied consistently across the site. */
+/* Terminal palette defaults to dark mode. */
 :root,
-:root[data-theme="light"],
 :root[data-theme="dark"] {
     --theme: #050805;
     --entry: #0b110b;
@@ -14,11 +13,28 @@
     color-scheme: dark;
 }
 
+:root[data-theme="light"] {
+    --theme: #eef6ea;
+    --entry: #f8fcf4;
+    --primary: #115b31;
+    --secondary: #44704f;
+    --tertiary: #cfe0cf;
+    --content: #14361e;
+    --code-block-bg: #e5efe0;
+    --code-bg: #edf5e8;
+    --border: #9cb89f;
+    color-scheme: light;
+}
+
 body,
-.list,
-[data-theme="dark"] .list {
+.list {
     background-color: var(--theme) !important;
     color: var(--content);
+    background-size: 80px 140px;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .list {
     background-image:
         linear-gradient(30deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
         linear-gradient(150deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
@@ -26,7 +42,17 @@ body,
         linear-gradient(150deg, #0d130d 12%, transparent 12.5%, transparent 87%, #0d130d 87.5%, #0d130d),
         linear-gradient(60deg, #101810 25%, transparent 25.5%, transparent 75%, #101810 75%, #101810),
         linear-gradient(60deg, #101810 25%, transparent 25.5%, transparent 75%, #101810 75%, #101810);
-    background-size: 80px 140px;
+}
+
+[data-theme="light"] body,
+[data-theme="light"] .list {
+    background-image:
+        linear-gradient(30deg, #dde9d7 12%, transparent 12.5%, transparent 87%, #dde9d7 87.5%, #dde9d7),
+        linear-gradient(150deg, #dde9d7 12%, transparent 12.5%, transparent 87%, #dde9d7 87.5%, #dde9d7),
+        linear-gradient(30deg, #dde9d7 12%, transparent 12.5%, transparent 87%, #dde9d7 87.5%, #dde9d7),
+        linear-gradient(150deg, #dde9d7 12%, transparent 12.5%, transparent 87%, #dde9d7 87.5%, #dde9d7),
+        linear-gradient(60deg, #e5f0e0 25%, transparent 25.5%, transparent 75%, #e5f0e0 75%, #e5f0e0),
+        linear-gradient(60deg, #e5f0e0 25%, transparent 25.5%, transparent 75%, #e5f0e0 75%, #e5f0e0);
 }
 
 body::before {
@@ -40,6 +66,10 @@ body::before {
     pointer-events: none;
     z-index: 999;
     opacity: 0.28;
+}
+
+[data-theme="light"] body::before {
+    opacity: 0.12;
 }
 
 body,
@@ -100,6 +130,11 @@ code,
     color: var(--primary) !important;
 }
 
+.header,
+.footer {
+    background: transparent;
+}
+
 .nav {
     justify-content: flex-start !important;
     gap: 2rem;
@@ -129,7 +164,7 @@ code,
 .retro-container {
     border: 1px solid var(--border);
     padding: 2rem;
-    background: rgba(11, 17, 11, 0.94);
+    background: color-mix(in srgb, var(--entry) 92%, transparent);
     color: var(--content);
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
 }
@@ -140,6 +175,12 @@ code,
     letter-spacing: 2px;
     color: var(--primary);
     animation: blink 1.5s infinite;
+}
+
+.contact-note {
+    margin: 0 0 1.5rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
 }
 
 @keyframes blink {
@@ -196,27 +237,4 @@ code,
     background: var(--primary);
     color: #000;
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.35);
-}
-
-.resume-section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 1px solid var(--border);
-    background: rgba(0, 255, 65, 0.05);
-}
-
-.resume-section h3,
-.resume-link {
-    color: var(--primary) !important;
-    font-weight: bold;
-}
-
-.resume-link:hover {
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
-}
-
-.resume-note {
-    font-size: 0.7rem;
-    color: var(--secondary);
-    margin-top: 0.5rem;
 }

@@ -22,8 +22,8 @@ As Director of the University of British Columbia Student Union Operations (UBCS
 - **Compliance Framework**: Established protocols for ethical AI deployment in educational technology
 - **Impact Assessment**: Developed metrics to evaluate AI implementation effectiveness and risk factors
 
-### Dharma of Governance
-This role embodies the ancient principle of maintaining institutional balance (Sattva) - ensuring that resources flow harmoniously through complex systems. Just as traditional governance structures maintained equilibrium in ancient societies, modern financial oversight requires the same mathematical precision and ethical consideration.
+### Why It Mattered
+This role was a practical lesson in decision-making under constraints. Managing a large operating budget meant balancing competing priorities, maintaining accountability, and building enough trust that stakeholders could make decisions from the same set of numbers.
 
 ### Achievements
 - Successfully managed multi-million dollar budget with zero material variances

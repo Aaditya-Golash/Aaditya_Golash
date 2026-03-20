@@ -1,29 +1,28 @@
 ---
-title: "WHOAMI --IDENTITY"
+title: "About"
 date: 2026-03-20
 weight: 5
 draft: false
-categories: ["product", "data", "swe"]
 ---
 
-## The Logic of the Silk Road
+## About
 
-My logic is a synthesis of two ancient mathematical traditions.
+> `> IDENTITY_LOG: AADITYA_GOLASH`
+> `> ORIGIN: INDIA / MIDDLE_EAST`
+> `> STATUS: FINAL_YEAR_CS_UBC`
 
-Born and raised in the Middle East, I was shaped by the symmetry and governance of its cities, where architecture is a physical manifestation of algorithms. The Mashrabiya screens that filter light through geometric patterns taught me about recursive design: complex beauty emerging from simple rules. My roots in India provided the philosophical framework, viewing code not just as syntax, but as karma: action and feedback. The mandala's balance and the yantra's mathematical precision showed me that true power comes from harmony, not force.
+I am a final-year Computer Science student at UBC.
 
-Today, I apply this "High-Density Logic" to Computer Science at UBC. Whether I am managing a $1.9M budget (Governance) or engineering deep learning pipelines for biometric data (Symmetry), I view every system as a living geometry that requires both precision and purpose.
+I grew up between India and the Middle East, and that shaped how I think. I like structure, clarity, and systems that actually work in practice.
 
-## Technical Philosophy
+A lot of what I have done started with trying things out. I have worked in campus roles, joined programs like Jump Start and Destination UBC, and taken on leadership positions in Phi Delta Theta and the UBC SUO. I like being around people and being involved, and those experiences showed me how messy real systems can get.
 
-I don't just build software; I architect digital environments that are as structured as a Mashrabiya and as balanced as a Mandala. Each project represents a continuation of this ancient tradition:
+That is where most of my projects come from. I notice things that take too long, break easily, or feel disorganized, and then I try to improve them. Sometimes that means building a full system. Sometimes it is a smaller tool. Either way, I care about making things run more smoothly.
 
-- **Pattern Recognition**: Connecting modern AI to the ancient art of recognizing complex patterns in geometry
-- **Dharma of Governance**: Framing fiscal oversight as the duty to maintain institutional balance (Sattva)
-- **Digital Bazaar**: Evolving traditional marketplace dynamics into algorithmic trust networks
+I have also spent time experimenting with social media. A few projects reached a couple million views, which taught me a lot about attention, feedback, and what people actually respond to. What people say they like is often different from what they engage with.
 
-## The Algorithmic Heritage
+Outside of work, I like simple things. I have travelled to around 15 countries, usually planning at least part of the trip around food. I grew up building with LEGO and Mindstorms, which is probably where my interest in systems started.
 
-My ancestors contributed the zero to mathematics (India) and algorithmic thinking to civilization (Middle East). I am simply continuing the family business, applying 3,000 years of geometric logic to solve 21st-century problems.
+Swimming and paddleboarding are still the easiest way for me to reset.
 
-In a world of exponential complexity, I bring the wisdom of recursive patterns and balanced systems to every challenge.
+If you want to talk about anything I have worked on, feel free to reach out.
