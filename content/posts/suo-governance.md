@@ -5,6 +5,14 @@ weight: 20
 draft: false
 categories: ["product", "data"]
 tags: ["Financial Analysis", "Governance", "Risk Management", "Policy Development"]
+ascii_cover: |
+      .----------------.
+      | BUDGET  1.9M   |
+      |----------------|
+      | + FORECAST     |
+      | - VARIANCE     |
+      | = CONTROL      |
+      '----------------'
 ---
 
 ## Strategic Financial Leadership: UBCSUO Operating Budget

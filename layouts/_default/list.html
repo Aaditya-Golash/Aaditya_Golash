@@ -66,6 +66,15 @@
 <article class="{{ $class }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+  {{- with .Params.ascii_cover }}
+  <div class="ascii-cover" aria-hidden="true">
+    <pre class="ascii-cover-art">{{ . }}</pre>
+    <div class="ascii-cover-footer">
+      <span class="ascii-cover-title">{{ $.Title | upper }}</span>
+      <span class="ascii-cover-cta">[ OPEN CASE STUDY ]</span>
+    </div>
+  </div>
+  {{- end }}
   <header class="entry-header">
     <h2 class="entry-hint-parent">
       {{- .Title }}

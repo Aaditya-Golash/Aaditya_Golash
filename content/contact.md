@@ -12,6 +12,7 @@ layout: "contact"
     <p class="contact-note">Role-specific resumes are available on request.</p>
     <form class="retro-form" action="https://formspree.io/f/xlgpvayk" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_subject" value="Portfolio contact form submission">
+        <input type="hidden" name="_next" value="https://aadityagolash.github.io/contact-success/">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
 
         <div class="input-group">

@@ -5,6 +5,16 @@ weight: 10
 draft: false
 categories: ["data", "swe"]
 tags: ["EEG", "Signal Processing", "Python", "Network Analysis", "wPLI"]
+ascii_cover: |
+        .-''''-.
+      .'  .-.  '.
+     /   (   )   \
+    ;  .-`-'-.  .-;
+    | /  .-.  \/ /|
+    ; | (   ) | | ;
+     \ \ `-' / / /
+      '._'-'_.'
+         /_\
 ---
 
 ## High-Dimensional Signal Processing: EEG Connectivity Networks
@@ -21,7 +31,7 @@ Developed a comprehensive EEG analysis pipeline that transforms raw 64-channel b
 This project required turning noisy biological signals into something stable enough to analyze. The main challenge was less about building a model in isolation and more about creating a pipeline that could clean data, reduce artifacts, and produce connectivity outputs that were actually usable.
 
 ### Key Achievements
-- Successfully handled high-dimensional signal data (64 channels × time series)
+- Successfully handled high-dimensional signal data (64 channels x time series)
 - Developed robust noise reduction techniques for EEG artifacts
 - Implemented real-time connectivity analysis algorithms
 - Demonstrated ability to extract meaningful patterns from complex physiological data

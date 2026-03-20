@@ -5,6 +5,13 @@ weight: 30
 draft: false
 categories: ["product", "swe"]
 tags: ["Entrepreneurship", "Product Management", "SaaS", "Market Validation"]
+ascii_cover: |
+      __________________
+     | VENUE | EVENT   |
+     |-------+---------|
+     | MATCH | BOOK    |
+     | TRUST | PAY     |
+     |_______|_________|
 ---
 
 ## Entrepreneurial Product Development: VenueWorks Platform

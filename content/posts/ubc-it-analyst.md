@@ -5,6 +5,14 @@ weight: 50
 draft: false
 categories: ["swe", "data"]
 tags: ["System Administration", "TypeScript", "Knowledge Management", "Infrastructure"]
+ascii_cover: |
+       .--------------.
+       | SYS  STATUS  |
+       |--------------|
+       | NET   [OK]   |
+       | DB    [OK]   |
+       | KB    [SYNC] |
+       '--------------'
 ---
 
 ## Enterprise IT Operations & System Automation
