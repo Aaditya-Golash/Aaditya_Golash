@@ -1,3 +1,144 @@
 {{ define "main" }}
-{{ .Content }}
+<a href="javascript:history.back()" class="back-btn">< RETURN_TO_PREVIOUS</a>
+
+<p class="status-text">> STANDBY: SECURE UPLINK READY</p>
+
+{{- if .Content }}
+<div class="contact-intro">
+  {{ .Content }}
+</div>
+{{- end }}
+
+<div class="retro-container">
+  <p class="contact-note">Role-specific resumes are available on request.</p>
+
+  <form
+    id="contact-form"
+    class="retro-form"
+    action="{{ site.Params.contact.formspreeEndpoint | default "https://formspree.io/f/xlgpvayk" }}"
+    method="POST"
+    accept-charset="UTF-8"
+  >
+    <input type="hidden" name="_subject" value="Portfolio contact form submission">
+    <input type="hidden" name="_next" value="{{ "/contact-success/" | absURL }}">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
+
+    <div class="input-group">
+      <label for="name">ID_IDENTIFIER:</label>
+      <input type="text" name="name" id="name" required placeholder="Your Name">
+    </div>
+
+    <div class="input-group">
+      <label for="email">RETURN_PATH:</label>
+      <input type="email" name="email" id="email" required placeholder="email@domain.com">
+    </div>
+
+    <div class="input-group">
+      <label for="message">TRANSMISSION:</label>
+      <textarea name="message" id="message" required rows="5" placeholder="Enter message..."></textarea>
+    </div>
+
+    <div class="input-group captcha-group">
+      <label for="captcha_answer">HUMAN_CHECK:</label>
+      <p id="captcha-prompt" class="captcha-prompt">Solve the check:</p>
+      <input type="text" name="captcha_answer" id="captcha_answer" required inputmode="numeric" placeholder="Enter answer">
+    </div>
+
+    {{- if site.Params.contact.turnstileSiteKey }}
+    <div class="input-group captcha-group">
+      <label>HUMAN_VERIFICATION:</label>
+      <div class="cf-turnstile" data-sitekey="{{ site.Params.contact.turnstileSiteKey }}"></div>
+    </div>
+    {{- end }}
+
+    <button id="contact-submit" type="submit" class="retro-btn">INITIALIZE_SEND</button>
+    <p id="contact-status" class="contact-status" aria-live="polite"></p>
+  </form>
+</div>
+
+{{- if site.Params.contact.turnstileSiteKey }}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{{- end }}
+
+<script>
+(() => {
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("contact-submit");
+  const status = document.getElementById("contact-status");
+  const captchaPrompt = document.getElementById("captcha-prompt");
+  const captchaAnswer = document.getElementById("captcha_answer");
+  const successRedirect = "{{ "/contact-success/" | relURL }}";
+  const hasCaptcha = {{ if site.Params.contact.turnstileSiteKey }}true{{ else }}false{{ end }};
+  const captchaA = Math.floor(Math.random() * 7) + 2;
+  const captchaB = Math.floor(Math.random() * 7) + 2;
+  const captchaExpected = captchaA + captchaB;
+
+  if (!form || !submitBtn || !status || !captchaPrompt || !captchaAnswer) return;
+
+  captchaPrompt.textContent = "Solve the check: " + captchaA + " + " + captchaB;
+
+  const setStatus = (msg, kind) => {
+    status.textContent = msg;
+    status.classList.remove("is-error", "is-success", "is-warn");
+    if (kind) status.classList.add(kind);
+  };
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setStatus("", "");
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    const userAnswer = Number(payload.captcha_answer);
+
+    if (!Number.isFinite(userAnswer) || userAnswer !== captchaExpected) {
+      setStatus("Human check failed. Please solve it again.", "is-warn");
+      captchaAnswer.focus();
+      return;
+    }
+
+    if (hasCaptcha && !payload["cf-turnstile-response"]) {
+      setStatus("Complete the CAPTCHA before sending.", "is-warn");
+      return;
+    }
+
+    delete payload.captcha_answer;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "SENDING...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        setStatus("Message sent. Redirecting...", "is-success");
+        window.location.assign(successRedirect);
+        return;
+      }
+
+      const data = await response.json().catch(() => null);
+      if (data && data.errors && data.errors.length > 0) {
+        setStatus(data.errors[0].message || "Unable to send message.", "is-error");
+      } else {
+        setStatus("Unable to send message right now. Try again shortly.", "is-error");
+      }
+    } catch (error) {
+      setStatus("Network error while sending. Please retry.", "is-error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "INITIALIZE_SEND";
+      if (hasCaptcha && window.turnstile) {
+        window.turnstile.reset();
+      }
+    }
+  });
+})();
+</script>
 {{ end }}

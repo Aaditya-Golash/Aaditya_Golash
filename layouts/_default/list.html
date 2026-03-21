@@ -55,6 +55,7 @@
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
+{{- $pageTitle := .Title }}
 
 {{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
 {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
@@ -70,7 +71,7 @@
   <div class="ascii-cover" aria-hidden="true">
     <pre class="ascii-cover-art">{{ . }}</pre>
     <div class="ascii-cover-footer">
-      <span class="ascii-cover-title">{{ $.Title | upper }}</span>
+      <span class="ascii-cover-title">{{ $pageTitle | upper }}</span>
       <span class="ascii-cover-cta">[ OPEN CASE STUDY ]</span>
     </div>
   </div>

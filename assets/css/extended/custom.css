@@ -199,27 +199,54 @@ code,
     font-size: 0.9rem;
 }
 
+.contact-intro {
+    margin-bottom: 1rem;
+    color: var(--content);
+}
+
+.hp-field {
+    display: none;
+}
+
 .ascii-cover {
     margin-bottom: 1.15rem;
     border: 1px solid var(--border);
     border-radius: 14px;
     overflow: hidden;
+    position: relative;
     background: linear-gradient(
         180deg,
         color-mix(in srgb, var(--entry) 98%, transparent),
         color-mix(in srgb, var(--code-block-bg) 96%, transparent)
     );
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03),
+        0 10px 35px rgba(0, 255, 65, 0.09);
+}
+
+.ascii-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.015) 50%,
+        rgba(0, 0, 0, 0.04) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.45;
 }
 
 .ascii-cover-art {
     margin: 0;
-    padding: 1.1rem 1.1rem 0.8rem;
+    padding: 1.2rem 1.2rem 0.9rem;
     border: 0;
     background: transparent !important;
     color: var(--primary) !important;
-    font-size: 0.78rem;
-    line-height: 1.05;
+    font-size: 0.84rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     overflow-x: auto;
     white-space: pre;
     text-shadow: 0 0 10px color-mix(in srgb, var(--primary) 30%, transparent);
@@ -251,6 +278,35 @@ code,
 .post-entry:hover .ascii-cover-cta,
 .first-entry:hover .ascii-cover-cta {
     color: var(--primary);
+}
+
+.captcha-group {
+    margin-top: 0.4rem;
+}
+
+.captcha-prompt {
+    margin: 0 0 0.5rem;
+    font-size: 0.82rem;
+    color: var(--secondary);
+}
+
+.contact-status {
+    min-height: 1.2rem;
+    margin: 0.8rem 0 0;
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+.contact-status.is-success {
+    color: var(--primary);
+}
+
+.contact-status.is-warn {
+    color: #d5c16b;
+}
+
+.contact-status.is-error {
+    color: #ff6e6e;
 }
 
 @keyframes blink {
@@ -311,7 +367,7 @@ code,
 
 @media screen and (max-width: 640px) {
     .ascii-cover-art {
-        font-size: 0.58rem;
+        font-size: 0.62rem;
     }
 
     .ascii-cover-footer {

@@ -10,7 +10,7 @@ The site is designed to feel clean, technical, and direct: a project-focused por
 - Grounded About page with personal context
 - Work organized by category: software engineering, quant and data, product and strategy
 - Project pages written around practical work and outcomes rather than abstract branding
-- Contact form powered by Formspree
+- Contact form powered by Formspree with bot checks
 - Dark mode by default with a supported light mode toggle
 
 ## Structure
@@ -70,3 +70,20 @@ Publishing is done by pushing to the repository's deployment branch/workflow set
 - Website contact form: Formspree-backed form on the contact page
 - LinkedIn: [linkedin.com/in/aaditya-golash](https://linkedin.com/in/aaditya-golash)
 - GitHub: [github.com/Aaditya-Golash](https://github.com/Aaditya-Golash)
+
+## Form Security Setup
+
+The contact form supports two anti-bot layers:
+
+1. Built-in honeypot + math challenge (enabled by default)
+2. Cloudflare Turnstile (recommended for stronger protection)
+
+Configure Formspree endpoint and Turnstile site key in `hugo.toml`:
+
+```toml
+[params.contact]
+formspreeEndpoint = "https://formspree.io/f/YOUR_FORM_ID"
+turnstileSiteKey = "YOUR_TURNSTILE_SITE_KEY"
+```
+
+If `turnstileSiteKey` is empty, the form still works with honeypot + math check.

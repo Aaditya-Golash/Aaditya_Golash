@@ -21,8 +21,8 @@ That is where most of my projects come from. I notice things that take too long,
 
 I have also spent time experimenting with social media. A few projects reached a couple million views, which taught me a lot about attention, feedback, and what people actually respond to. What people say they like is often different from what they engage with.
 
-Outside of work, I like simple things. I have travelled to around 15 countries, usually planning at least part of the trip around food. I grew up building with LEGO and Mindstorms, which is probably where my interest in systems started.
+Outside of work, I like a few different things. I have travelled to around 15 countries, usually planning at least part of the trip around food. I grew up building with LEGO and Mindstorms, which is probably where my interest in systems started.
 
-Swimming and paddleboarding are still the easiest way for me to reset.
+Swimming and paddleboarding are still the easiest way for me to reset, and Oscar (my dog) keeps me grounded.
 
 If you want to talk about anything I have worked on, feel free to reach out.

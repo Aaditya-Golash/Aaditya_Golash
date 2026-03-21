@@ -11,6 +11,10 @@ theme = "PaperMod"
     defaultTheme = "dark"
     disableThemeToggle = false
 
+    [params.contact]
+        formspreeEndpoint = "https://formspree.io/f/xlgpvayk"
+        turnstileSiteKey = ""
+
     [params.profileMode]
         enabled = true
         title = "Aaditya Golash"
