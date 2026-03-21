@@ -1,4 +1,4 @@
-baseURL = "https://aadityagolash.github.io/"
+baseURL = "https://aaditya-golash.github.io/Aaditya_Golash/"
 languageCode = "en-us"
 title = "Aaditya Golash"
 theme = "PaperMod"
@@ -6,10 +6,11 @@ theme = "PaperMod"
 [params]
     env = "production"
     title = "Aaditya Golash"
-    description = "Computer Science @ UBC | Management Minor | $1.9M Budget Oversight"
+    description = "Systems thinker building practical solutions across product, operations, data, and engineering."
     author = "Aaditya"
     defaultTheme = "dark"
     disableThemeToggle = false
+    mainSections = ["posts"]
 
     [params.contact]
         formspreeEndpoint = "https://formspree.io/f/xlgpvayk"
@@ -18,12 +19,12 @@ theme = "PaperMod"
     [params.profileMode]
         enabled = true
         title = "Aaditya Golash"
-        subtitle = "Final-year CS @ UBC. Engineered a $1.9M budget oversight system and built PyTorch pipelines for biometric data analysis."
+        subtitle = "I build systems that reduce friction across organizations."
         displayFullContent = false
 
         [[params.profileMode.buttons]]
-            name = "View My Work"
-            url = "posts"
+            name = "View Systems"
+            url = "systems"
 
     [[params.socialIcons]]
         name = "linkedin"
@@ -39,26 +40,25 @@ theme = "PaperMod"
         url = "/"
         weight = 5
     [[menu.main]]
+        identifier = "systems"
+        name = "Systems"
+        url = "/systems"
+        weight = 10
+    [[menu.main]]
+        identifier = "lab"
+        name = "Lab"
+        url = "/posts"
+        weight = 20
+    [[menu.main]]
         identifier = "about"
         name = "About"
         url = "/about"
-        weight = 10
-    [[menu.main]]
-        name = "Software Engineering"
-        url = "/categories/swe"
-        weight = 20
-    [[menu.main]]
-        name = "Quant & Data"
-        url = "/categories/data"
         weight = 30
     [[menu.main]]
-        name = "Product & Strategy"
-        url = "/categories/product"
-        weight = 40
-    [[menu.main]]
+        identifier = "contact"
         name = "Contact"
         url = "/contact"
-        weight = 50
+        weight = 40
 
 [markup.goldmark.renderer]
   unsafe = true
