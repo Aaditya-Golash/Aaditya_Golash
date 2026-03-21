@@ -1,4 +1,4 @@
 ---
-title: "Software Engineering"
-description: "Core systems, automation pipelines, and scalable architecture. Focused on high-performance Python and TypeScript environments."
+title: "Systems Engineering"
+description: "Backend architecture, automation, and production-focused implementation. Built for reliability, speed, and real users."
 ---

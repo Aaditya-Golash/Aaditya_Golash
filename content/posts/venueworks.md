@@ -3,8 +3,12 @@ title: "VenueWorks: Commercial Space Marketplace"
 date: 2026-03-05
 weight: 30
 draft: false
-categories: ["product", "swe"]
+featured: true
+categories: ["product", "swe", "operations"]
 tags: ["Entrepreneurship", "Product Management", "SaaS", "Market Validation"]
+description: "Built a marketplace concept from zero to funded MVP and validated demand with early users."
+system_group: "growth"
+role_alignment: ["APM", "Consulting", "Product", "SWE"]
 ascii_cover: |-
   .-VENUEWORKS-.
   VENUE <> EVENT
@@ -12,29 +16,39 @@ ascii_cover: |-
   TRUST   PAY
 ---
 
-## Entrepreneurial Product Development: VenueWorks Platform
+> `> LOG_ENTRY: VENUEWORKS_MVP`
+> `> STATUS: PROTOTYPE_VALIDATED`
 
-Founded and developed VenueWorks, a marketplace platform connecting commercial space providers with event organizers, securing $1,500 in seed funding and placing 2nd in UBC's prestigious entrepreneurship competition.
+## Problem
+Small and mid-sized event organizers struggle to find and book suitable venues quickly. Discovery, trust checks, and transaction flow are fragmented across channels.
 
-### Product Development
-- **Platform Architecture**: Designed and implemented full-stack marketplace solution
-- **Market Research**: Conducted extensive user interviews and competitive analysis
-- **MVP Development**: Built minimum viable product with core booking and payment functionality
-- **User Experience**: Created intuitive interface for both space providers and event organizers
+## Context
+Two-sided marketplaces fail when either side experiences too much friction. We needed to make venue discovery and booking understandable for both providers and organizers without enterprise-level complexity.
 
-### Business Strategy
-- **Market Validation**: Identified and validated $2.3B addressable market in commercial event spaces
-- **Revenue Modeling**: Developed pricing strategy and commission-based monetization model
-- **Competitive Positioning**: Differentiated through focus on SMB event organizers and local venues
-- **Go-to-Market**: Executed launch strategy targeting university communities and local businesses
+## What I Built
+I founded and built VenueWorks, a marketplace MVP connecting commercial space providers with event organizers. I handled product direction, technical build, and validation strategy.
 
-### Marketplace Design
-VenueWorks was an exercise in building trust into a two-sided platform. The main challenge was not just creating listings, but designing a product that made it easier for space providers and event organizers to evaluate each other, transact clearly, and reduce friction in the booking process.
+## Key Decisions
+- Started with a constrained MVP: listing quality, inquiry clarity, and booking flow first.
+- Prioritized trust signals (availability clarity, response expectations) over feature breadth.
+- Used direct user interviews to shape roadmap instead of scaling assumptions too early.
 
-### Achievements
-- Secured $1,500 seed funding through compelling business case
-- Placed 2nd in UBC entrepreneurship competition among 50+ teams
-- Built functional MVP demonstrating technical and product capabilities
-- Validated market demand through user research and early adoption metrics
+## Tradeoffs
+- We delayed advanced analytics and deep personalization to ship a usable core product faster.
+- Geographic scope stayed narrow in early testing to improve signal quality.
+- Prioritized operational reliability over aggressive growth mechanics at launch.
 
-This venture demonstrates full-cycle product development from concept to market validation, combining technical execution with business acumen - essential skills for product management and startup leadership roles.
+## Impact
+- Secured **$1,500 seed funding**.
+- Placed **2nd** in UBC entrepreneurship competition.
+- Validated demand and core workflow with early users.
+- Built a working product that translated market insight into execution.
+
+## Tech Stack
+`TypeScript` `React` `Node.js` `PostgreSQL` `Product Discovery`
+
+## Role Alignment
+- `APM`: Drove roadmap decisions from user signal, constraints, and outcome focus.
+- `Consulting`: Structured an ambiguous market problem into testable phases.
+- `Product`: Designed value exchange for a two-sided user base.
+- `SWE`: Shipped a functional MVP with practical booking flow.

@@ -1,4 +1,4 @@
 ---
-title: "Quant & Data"
-description: "Data-intensive analytics, statistical modeling, and decision science, grounded in high-impact financial contexts."
+title: "Decisions & Analytics"
+description: "Signal processing, experimentation, and analysis used to make better product, operational, and financial decisions."
 ---

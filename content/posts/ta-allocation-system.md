@@ -3,9 +3,12 @@ title: "System Architecture: TA Allocation & Management"
 date: 2025-08-15
 weight: 15
 draft: false
-categories: ["swe", "product"]
-tags: ["Flask", "MySQL", "Docker", "Agile"]
-description: "Redesigning administrative workflows for the UBC CS Department: 70% reduction in allocation latency."
+featured: true
+categories: ["swe", "product", "operations"]
+tags: ["Flask", "MySQL", "Docker", "Agile", "RBAC"]
+description: "Redesigning UBC CS TA allocation workflows and reducing allocation latency by 70%."
+system_group: "academic"
+role_alignment: ["APM", "Consulting", "SWE", "Data / Analytics"]
 ascii_cover: |-
   .-TA-ALLOC--.
   TA  TA  TA
@@ -17,30 +20,39 @@ ascii_cover: |-
 > `> STATUS: DEPLOYED / 3RD_PLACE_AWARD`
 > `> CLIENT: UBC COMPUTER SCIENCE DEPARTMENT`
 
-### 1. The Friction (Tamas)
+## Problem
+TA allocation was managed through spreadsheets and long email threads. Conflict checks were mostly manual, which made scheduling errors and delays common.
 
-The existing TA allocation process relied on fragmented spreadsheets, manual email chains, and human-led conflict detection for **250+ applications per term**.
+## Context
+The department handled more than 250 applications each term, with multiple stakeholders needing visibility into decisions. Manual coordination made the process slow and hard to audit.
 
-- **Operational Debt:** High risk of scheduling overlaps and administrative burnout.
-- **The Goal:** Eliminate manual data entry and standardize the selection logic.
+## What I Built
+I led backend infrastructure and testing in a 6-person Agile team. We built a full workflow platform for application review, role assignment, conflict checks, and administrative tracking.
 
-### 2. The Architecture (Rajas)
+## Key Decisions
+- We used `Flask + MySQL + Docker` so the stack stayed simple to deploy and maintain in a university environment.
+- We implemented `RBAC` early to keep faculty/admin/student permissions clear.
+- We automated schedule conflict detection so reviewers could focus on selection quality instead of manual validation.
+- We set a strict testing bar (`Pytest` + `Vitest`) to reduce failure risk during peak submission periods.
 
-I led the **backend infrastructure and testing** in a 6-member Agile team to build a full-stack governance platform.
+## Tradeoffs
+- We prioritized reliability and access control over advanced optimization features in v1.
+- We chose a conventional architecture over novelty so onboarding would stay easy for future contributors.
+- We focused on allocation workflow depth rather than building broad reporting modules in the same release.
 
-- **Stack:** Flask (Python), MySQL, and Docker for containerized deployment.
-- **Governance Logic:** Engineered a secure **RBAC (Role-Based Access Control)** system and automated scheduling conflict detection.
-- **Resilience:** Achieved **100% test coverage** using Pytest and Vitest, ensuring zero-fail deployments during high-traffic application windows.
-- **Accessibility:** Designed a drag-and-drop interface compliant with **WCAG 2.1 AA standards**, ensuring the system was usable by all faculty and students.
+## Impact
+- Reduced allocation administration time by **70%**.
+- Centralized and processed **250+ applications** through one system.
+- Delivered **36+ stakeholder requirements** within capstone constraints.
+- Awarded **3rd Place Overall** at the UBC Okanagan Capstone Competition.
 
-### 3. The Result (Sattva)
+## Tech Stack
+`Python` `Flask` `MySQL` `Docker` `Pytest` `Vitest` `RBAC`
 
-The system transformed a multi-week manual process into a centralized digital operation.
+## Role Alignment
+- `APM`: Balanced stakeholder requirements, delivery scope, and release quality.
+- `Consulting`: Mapped messy institutional workflow into an operational system.
+- `SWE`: Built and tested production-ready backend infrastructure.
+- `Data / Analytics`: Used structured data and validation logic to improve allocation decisions.
 
-- **Efficiency:** **70% reduction** in administrative allocation time.
-- **Scale:** Successfully managed **250+ applications** and resolved **36+ feature requirements** identified by stakeholders.
-- **Validation:** Awarded **3rd Place Overall** in the UBC Okanagan Capstone Competition for technical rigor and real-world impact.
-
----
-
-`> SOURCE_CODE: https://github.com/Aaditya-Golash/ta-allocation-system-capstone`
+Source code: [github.com/Aaditya-Golash/ta-allocation-system-capstone](https://github.com/Aaditya-Golash/ta-allocation-system-capstone)

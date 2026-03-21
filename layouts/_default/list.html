@@ -4,11 +4,18 @@
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
 
+{{- $displayTitle := .Title }}
+{{- $displayDescription := .Description }}
+{{- if and (eq .Kind "section") (eq .Section "posts") }}
+  {{- $displayTitle = "Lab" }}
+  {{- $displayDescription = "Experiments, implementation notes, and secondary builds. Core flagship work is curated on the Systems page." }}
+{{- end }}
+
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
   <h1>
-    {{ .Title }}
+    {{ $displayTitle }}
     {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
     {{- with .OutputFormats.Get "rss" }}
     <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
@@ -22,10 +29,13 @@
     {{- end }}
     {{- end }}
   </h1>
-  {{- if .Description }}
+  {{- if $displayDescription }}
   <div class="post-description" style="color: #00ff41; font-family: 'Courier New'; border-bottom: 1px solid #333; padding-bottom: 1rem;">
-    > {{ .Description }}
+    > {{ $displayDescription }}
   </div>
+  {{- end }}
+  {{- if and (eq .Kind "section") (eq .Section "posts") }}
+  <p class="terminal-line">&gt; exploring experiments...</p>
   {{- end }}
 </header>
 {{- end }}

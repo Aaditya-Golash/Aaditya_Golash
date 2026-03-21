@@ -3,8 +3,12 @@ title: "Fiscal Oversight: $1.9M Operating Budget"
 date: 2026-03-10
 weight: 20
 draft: false
-categories: ["product", "data"]
+featured: true
+categories: ["product", "data", "operations"]
 tags: ["Financial Analysis", "Governance", "Risk Management", "Policy Development"]
+description: "Oversaw a $1.9M operating budget and built governance structures for clearer institutional decisions."
+system_group: "organizational"
+role_alignment: ["Consulting", "APM", "Operations", "Data / Analytics"]
 ascii_cover: |-
   .-BUDGET----.
   1.9M  CTRL
@@ -12,28 +16,38 @@ ascii_cover: |-
   -VARIANCE
 ---
 
-## Strategic Financial Leadership: UBCSUO Operating Budget
+> `> LOG_ENTRY: UBCSUO_FISCAL_GOVERNANCE`
+> `> OPERATING_SCOPE: MULTI-DEPARTMENT`
 
-As Director of the University of British Columbia Student Union Operations (UBCSUO), led comprehensive oversight of $1.9M in annual operating funds while spearheading policy development for responsible AI implementation.
+## Problem
+Budget decisions across teams can drift when variance tracking, policy structure, and decision accountability are inconsistent.
 
-### Key Responsibilities
-- **Budget Management**: Directed allocation and monitoring of $1.9M operating budget across multiple departments
-- **Financial Forecasting**: Developed predictive models for budget variance analysis and resource optimization
-- **Risk Assessment**: Implemented governance frameworks for financial risk mitigation
-- **Stakeholder Management**: Coordinated with executive team and board members on fiscal strategy
+## Context
+As Director in the UBCSUO, I worked across stakeholders with different priorities while maintaining oversight of a large annual budget. The challenge was less "analysis in isolation" and more creating shared operational clarity.
 
-### Policy Innovation
-- **AI Governance**: Authored and implemented Policy SC14 for responsible artificial intelligence use in student operations
-- **Compliance Framework**: Established protocols for ethical AI deployment in educational technology
-- **Impact Assessment**: Developed metrics to evaluate AI implementation effectiveness and risk factors
+## What I Built
+I led fiscal oversight workflows for a **$1.9M operating budget**, implemented forecasting and variance review practices, and contributed policy infrastructure, including responsible AI governance.
 
-### Why It Mattered
-This role was a practical lesson in decision-making under constraints. Managing a large operating budget meant balancing competing priorities, maintaining accountability, and building enough trust that stakeholders could make decisions from the same set of numbers.
+## Key Decisions
+- Standardized variance review cadence so teams worked from the same numbers.
+- Emphasized decision traceability over ad-hoc budget adjustments.
+- Framed policy work to be implementable by operators, not only readable by leadership.
 
-### Achievements
-- Successfully managed multi-million dollar budget with zero material variances
-- Pioneered AI governance framework adopted across student union operations
-- Demonstrated expertise in balancing fiscal responsibility with technological innovation
-- Built stakeholder consensus for complex policy implementations
+## Tradeoffs
+- Prioritized governance consistency over short-term flexibility in discretionary spending.
+- Invested more effort in stakeholder alignment upfront to reduce rework later.
+- Kept policy language practical rather than legal-heavy to improve adoption.
 
-This leadership role combines quantitative financial acumen with strategic policy development, positioning me for senior roles in consulting and product strategy where fiscal oversight meets technological innovation.
+## Impact
+- Maintained disciplined oversight on **$1.9M** in annual operating funds.
+- Improved cross-team budget visibility and accountability.
+- Helped establish clearer policy direction for operational technology decisions.
+
+## Tech Stack
+`Financial Modeling` `Forecasting` `Variance Analysis` `Governance Design`
+
+## Role Alignment
+- `Consulting`: Structured ambiguous org problems into repeatable governance practices.
+- `APM`: Balanced multiple stakeholders while maintaining execution clarity.
+- `Operations`: Built process consistency and decision reliability.
+- `Data / Analytics`: Used numbers to guide decisions rather than justify them after the fact.

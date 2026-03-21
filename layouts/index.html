@@ -1,0 +1,71 @@
+{{- define "main" -}}
+<section class="operator-hero">
+  <pre class="hero-ascii" aria-hidden="true">
+  .--[ SYSTEM OPERATOR ]--.
+  | detect -> map -> build |
+  '------------------------'
+  </pre>
+  <p class="terminal-line">&gt; detecting friction...</p>
+  <p class="terminal-line">&gt; mapping system...</p>
+  <p class="terminal-line">&gt; executing solution...</p>
+  <h1 class="operator-title">Aaditya Golash</h1>
+  <p class="operator-subtitle">I build practical systems across product, operations, data, and engineering.</p>
+  <div class="operator-actions">
+    <a class="retro-btn" href="{{ "/systems/" | relURL }}">VIEW_SYSTEMS</a>
+    <a class="retro-btn" href="{{ "/posts/" | relURL }}">OPEN_LAB</a>
+    <a class="retro-btn" href="{{ "/contact/" | relURL }}">CONTACT</a>
+  </div>
+</section>
+
+<section class="home-panel">
+  <pre class="section-divider" aria-hidden="true">--[ IDENTITY ]--------------------------</pre>
+  <h2>Identity</h2>
+  <p>
+    Final-year CS + Management student at UBC. I grew up between India and the Middle East, which pushed me toward structured thinking, adaptability, and systems that hold up in real environments.
+  </p>
+</section>
+
+<section class="home-panel">
+  <pre class="section-divider" aria-hidden="true">--[ HOW I THINK ]-----------------------</pre>
+  <h2>How I Think</h2>
+  <ul class="thinking-list">
+    <li><strong>Start with friction.</strong> I look for workflows that are slow, unclear, or dependent on manual workarounds.</li>
+    <li><strong>Design for constraints.</strong> I build around real users, existing processes, and the tradeoffs teams can actually support.</li>
+    <li><strong>Measure what changed.</strong> I care about time saved, risk reduced, and decision quality improved.</li>
+  </ul>
+</section>
+
+<section class="home-panel">
+  <pre class="section-divider" aria-hidden="true">--[ FEATURED SYSTEMS ]------------------</pre>
+  <h2>Featured Projects</h2>
+  <p class="section-kicker">Curated case studies that represent my strongest system work.</p>
+  <div class="featured-grid">
+    {{- $featured := where site.RegularPages "Type" "posts" -}}
+    {{- $featured = where $featured "Params.featured" true -}}
+    {{- $featured = sort $featured "Weight" "asc" -}}
+    {{- range first 4 $featured }}
+    <article class="featured-card">
+      {{- with .Params.ascii_cover }}
+      <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>
+      {{- end }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>
+        {{- with .Params.description -}}
+          {{ . }}
+        {{- else -}}
+          {{ .Summary | plainify | htmlUnescape }}
+        {{- end -}}
+      </p>
+      {{- with .Params.role_alignment }}
+      <div class="pill-row">
+        {{- range . }}
+        <span class="role-pill">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      <a class="featured-link" href="{{ .RelPermalink }}">Read Case Study</a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end -}}

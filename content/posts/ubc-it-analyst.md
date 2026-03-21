@@ -3,8 +3,12 @@ title: "System Automation & Infrastructure: UBC IT Analyst"
 date: 2026-02-25
 weight: 50
 draft: false
-categories: ["swe", "data"]
+featured: false
+categories: ["swe", "data", "operations"]
 tags: ["System Administration", "TypeScript", "Knowledge Management", "Infrastructure"]
+description: "Improved IT service reliability through automation, documentation systems, and operational process redesign."
+system_group: "organizational"
+role_alignment: ["SWE", "Operations", "Consulting", "APM"]
 ascii_cover: |-
   .-SYS-OPS---.
   NET   OK
@@ -12,26 +16,38 @@ ascii_cover: |-
   KB   SYNC
 ---
 
-## Enterprise IT Operations & System Automation
+> `> LOG_ENTRY: UBC_IT_OPERATIONS`
+> `> SERVICE_SCOPE: CAMPUS_SYSTEMS`
 
-As IT Analyst at University of British Columbia, led infrastructure modernization and knowledge management initiatives serving 50,000+ users across campus systems.
+## Problem
+IT operations at scale can become reactive when documentation quality, workflow consistency, and monitoring standards are uneven.
 
-### Technical Leadership
-- **Knowledge Base Redesign**: Architected and implemented modern knowledge management system using TypeScript and React
-- **System Automation**: Developed automated workflows for IT service management and incident response
-- **Infrastructure Monitoring**: Implemented proactive monitoring solutions for critical campus systems
-- **User Support Optimization**: Streamlined support processes reducing resolution time by 40%
+## Context
+Working in a large university environment meant supporting diverse users and systems, often under time pressure. Improvements had to be practical for day-to-day operators, not just technically elegant.
 
-### System Administration
-- **Network Infrastructure**: Managed enterprise network infrastructure and security protocols
-- **Server Management**: Administered Linux/Windows server environments and cloud infrastructure
-- **Database Operations**: Maintained and optimized database systems supporting academic applications
-- **Security Compliance**: Ensured adherence to university data security and privacy standards
+## What I Built
+I contributed to infrastructure modernization through knowledge-base redesign, workflow automation, and improvements to support process reliability.
 
-### Process Improvement
-- **Documentation Systems**: Created comprehensive technical documentation and standard operating procedures
-- **Change Management**: Implemented structured change management processes for system updates
-- **Performance Optimization**: Identified and resolved system bottlenecks affecting user experience
-- **Vendor Management**: Coordinated with external vendors for software and hardware procurement
+## Key Decisions
+- Treated documentation as infrastructure, not an afterthought.
+- Designed automation around recurring support bottlenecks.
+- Focused on maintainable process changes that staff could adopt quickly.
 
-This role developed deep expertise in enterprise IT operations, combining technical system administration with process optimization - skills directly transferable to DevOps, infrastructure engineering, and technical operations management.
+## Tradeoffs
+- Prioritized high-frequency support pain points over low-frequency edge optimizations.
+- Chose incremental rollout over disruptive one-shot process replacement.
+- Scoped technical changes to align with existing service constraints.
+
+## Impact
+- Improved service consistency and knowledge accessibility.
+- Reduced time spent on repetitive support workflows.
+- Increased operational readiness for system incidents and change cycles.
+
+## Tech Stack
+`TypeScript` `React` `System Administration` `ITSM Workflows` `Knowledge Management`
+
+## Role Alignment
+- `SWE`: Built automation and tooling around real operational needs.
+- `Operations`: Improved execution reliability in a high-demand environment.
+- `Consulting`: Diagnosed process bottlenecks and implemented practical fixes.
+- `APM`: Balanced stakeholder needs while shipping measurable operational improvements.

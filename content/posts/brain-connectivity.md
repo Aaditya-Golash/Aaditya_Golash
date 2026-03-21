@@ -3,8 +3,12 @@ title: "EEG Brain Connectivity Analysis"
 date: 2026-03-20
 weight: 10
 draft: false
+featured: true
 categories: ["data", "swe"]
 tags: ["EEG", "Signal Processing", "Python", "Network Analysis", "wPLI"]
+description: "Built a robust EEG pipeline turning noisy 64-channel data into usable connectivity networks."
+system_group: "data"
+role_alignment: ["Data / Analytics", "Quant-Adjacent", "SWE", "Consulting"]
 ascii_cover: |-
   .--BRAIN--.
   (  o  o   )
@@ -13,23 +17,38 @@ ascii_cover: |-
   '--NET----'
 ---
 
-## High-Dimensional Signal Processing: EEG Connectivity Networks
+> `> LOG_ENTRY: EEG_CONNECTIVITY_PIPELINE`
+> `> SIGNAL_STATE: NOISY_TO_STRUCTURED`
 
-Developed a comprehensive EEG analysis pipeline that transforms raw 64-channel brain wave data into stable functional connectivity networks using weighted Phase Lag Index (wPLI) algorithms.
+## Problem
+Raw EEG data is high-dimensional and noisy. Without a stable preprocessing and connectivity pipeline, the outputs are too inconsistent for analysis or decision-making.
 
-### Technical Implementation
-- **Data Processing**: Cleaned and preprocessed 64-channel EEG recordings, implementing artifact rejection and frequency band filtering
-- **Connectivity Analysis**: Implemented wPLI algorithm to measure phase synchronization between electrode pairs
-- **Network Construction**: Built adjacency matrices representing brain connectivity patterns
-- **Visualization**: Created interactive network graphs showing functional brain networks
+## Context
+The dataset involved 64-channel recordings where artifacts, drift, and synchronization noise could dominate results. The goal was to extract connectivity patterns that were actually interpretable.
 
-### Why It Matters
-This project required turning noisy biological signals into something stable enough to analyze. The main challenge was less about building a model in isolation and more about creating a pipeline that could clean data, reduce artifacts, and produce connectivity outputs that were actually usable.
+## What I Built
+I built an end-to-end EEG analysis workflow: preprocessing, artifact rejection, band filtering, weighted Phase Lag Index (wPLI) connectivity computation, adjacency matrix generation, and network visualization.
 
-### Key Achievements
-- Successfully handled high-dimensional signal data (64 channels x time series)
-- Developed robust noise reduction techniques for EEG artifacts
-- Implemented real-time connectivity analysis algorithms
-- Demonstrated ability to extract meaningful patterns from complex physiological data
+## Key Decisions
+- Used `wPLI` to reduce zero-lag and noise-sensitive phase bias.
+- Treated preprocessing as a first-class stage instead of a quick cleanup step.
+- Built outputs as reusable adjacency/network artifacts so downstream analysis stayed consistent.
 
-This project showcases expertise in signal processing, time-series analysis, and translating noisy biological data into actionable insights - skills directly applicable to financial market analysis and quantitative trading systems.
+## Tradeoffs
+- Prioritized signal integrity and interpretability over fast experimentation loops.
+- Chose transparent analytics over black-box modeling for this phase.
+- Focused on connectivity structure quality before extending to predictive tasks.
+
+## Impact
+- Produced stable connectivity networks from noisy physiological data.
+- Established a reusable analysis workflow for repeated EEG experiments.
+- Improved reliability of downstream insight generation from biological signals.
+
+## Tech Stack
+`Python` `NumPy` `SciPy` `MNE` `NetworkX` `Matplotlib`
+
+## Role Alignment
+- `Data / Analytics`: Built analysis quality from raw signal to interpretable network output.
+- `Quant-Adjacent`: Worked with noisy time-series and statistical signal features.
+- `SWE`: Structured the pipeline for repeatability and reliable outputs.
+- `Consulting`: Framed technical work around usable decision support, not only model complexity.

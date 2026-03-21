@@ -1,4 +1,4 @@
 ---
 title: "Product & Strategy"
-description: "Product-market fit thinking, roadmap execution, and governance-informed strategy for scalable initiatives."
+description: "Product decisions, operational design, and execution strategy from idea to measurable outcomes."
 ---

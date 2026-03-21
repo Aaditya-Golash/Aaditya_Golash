@@ -1,0 +1,53 @@
+{{ define "main" }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Content }}
+  <div class="post-content">{{ .Content }}</div>
+  {{- end }}
+</header>
+
+{{- $posts := where site.RegularPages "Type" "posts" -}}
+{{- $groups := slice
+  (dict "key" "academic" "title" "Academic Systems" "desc" "Coursework and capstone builds where technical architecture was the core delivery.")
+  (dict "key" "organizational" "title" "Organizational Systems" "desc" "Systems built for governance, operations, and institutional reliability.")
+  (dict "key" "data" "title" "Data / Analytical Systems" "desc" "Signal-heavy or data-heavy pipelines designed for decision support.")
+  (dict "key" "growth" "title" "Growth / Distribution Systems" "desc" "Projects focused on adoption, attention, and go-to-market execution.")
+-}}
+
+{{- range $groups }}
+<section class="systems-group">
+  <h2>{{ .title }}</h2>
+  <p class="systems-desc">{{ .desc }}</p>
+  <p class="terminal-line">&gt; mapping system...</p>
+
+  {{- $items := where $posts "Params.system_group" .key -}}
+  {{- if gt (len $items) 0 }}
+  <div class="systems-grid">
+    {{- range sort $items "Weight" "asc" }}
+    <article class="systems-card">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>
+        {{- with .Params.description -}}
+          {{ . }}
+        {{- else -}}
+          {{ .Summary | plainify | htmlUnescape }}
+        {{- end -}}
+      </p>
+      {{- with .Params.role_alignment }}
+      <div class="pill-row">
+        {{- range . }}
+        <span class="role-pill">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      <a class="featured-link" href="{{ .RelPermalink }}">Open Case Study</a>
+    </article>
+    {{- end }}
+  </div>
+  {{- else }}
+  <p class="systems-empty">No projects tagged in this group yet.</p>
+  {{- end }}
+</section>
+{{- end }}
+{{ end }}
