@@ -2,7 +2,6 @@ baseURL = "https://aaditya-golash.github.io/Aaditya_Golash/"
 languageCode = "en-us"
 title = "Aaditya Golash"
 theme = "PaperMod"
-relativeURLs = true
 
 [params]
     env = "production"
@@ -25,7 +24,7 @@ relativeURLs = true
 
         [[params.profileMode.buttons]]
             name = "View Systems"
-            url = "systems"
+            url = "systems/"
 
     [[params.socialIcons]]
         name = "linkedin"
@@ -43,17 +42,17 @@ relativeURLs = true
     [[menu.main]]
         identifier = "systems"
         name = "Systems"
-        url = "systems"
+        url = "systems/"
         weight = 10
     [[menu.main]]
         identifier = "lab"
         name = "Lab"
-        url = "posts"
+        url = "posts/"
         weight = 20
     [[menu.main]]
         identifier = "about"
         name = "About"
-        url = "about"
+        url = "about/"
         weight = 30
     [[menu.main]]
         identifier = "resume"
@@ -63,7 +62,7 @@ relativeURLs = true
     [[menu.main]]
         identifier = "contact"
         name = "Contact"
-        url = "contact"
+        url = "contact/"
         weight = 40
 
 [markup.goldmark.renderer]
