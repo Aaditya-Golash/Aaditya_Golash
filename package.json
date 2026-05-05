@@ -1,0 +1,14 @@
+{
+  "name": "aaditya-golash-site-tests",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests/ui.spec.ts",
+    "test:navigation": "npx playwright test tests/navigation.spec.ts",
+    "test:accessibility": "npx playwright test tests/accessibility.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}
