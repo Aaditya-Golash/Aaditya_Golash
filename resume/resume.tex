@@ -1,0 +1,123 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.34in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{0.9}
+\renewcommand{\labelitemi}{\textbullet}
+
+\newenvironment{resumeItems}{
+  \begin{itemize}
+    \raggedright
+    \setlength{\leftmargin}{1.15em}
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\partopsep}{0pt}
+}{
+  \end{itemize}
+  \vspace{-5pt}
+}
+
+\newcommand{\sectionTitle}[1]{
+  \vspace{3pt}
+  \noindent{\normalsize\bfseries #1}\par
+  \vspace{2pt}
+  \hrule
+  \vspace{3pt}
+}
+
+\newcommand{\resumeHeader}{
+  \begin{center}
+    {\LARGE\bfseries Aaditya Golash}\\[-1pt]
+    {\footnotesize In BC, willing to relocate}\\[-1pt]
+    {\footnotesize
+    Email: \href{mailto:aadigolash10@outlook.com}{aadigolash10@outlook.com} \,|\,
+    LinkedIn: \href{https://linkedin.com/in/aaditya-golash}{linkedin.com/in/aaditya-golash} \,|\,
+    GitHub: \href{https://github.com/Aaditya-Golash}{github.com/Aaditya-Golash}}
+  \end{center}
+  \vspace{-12pt}
+}
+
+\newcommand{\entry}[4]{
+  \textbf{#1}\hfill #2\\[0pt]
+  \textit{#3}\hfill \textit{#4}
+}
+
+\newcommand{\project}[3]{
+  \textbf{#1}\hfill #3\\[0pt]
+  \textit{#2}
+}
+
+\begin{document}
+\fontsize{8.15pt}{8.75pt}\selectfont\sloppy
+
+\resumeHeader
+
+\sectionTitle{Education}
+\entry{University of British Columbia}{BC}{B.Sc. Computer Science, Minor in Management (Co-op)}{2021 -- Present}
+\begin{resumeItems}
+  \item Relevant Coursework: Artificial Intelligence, Network Science, Analysis of Algorithms, Databases, Investments, Finance
+\end{resumeItems}
+
+\sectionTitle{Professional Experience}
+\entry{Director}{May 2025 -- Apr 2026}{UBC Students' Union (UBCSUO)}{Kelowna, BC}
+\begin{resumeItems}
+  \item Represented \textbf{12,000+} UBCO students as an elected director while overseeing digital governance and funding decisions across a \textbf{\$1.9M} operating budget.
+  \item Allocated \textbf{\$370K+} in annual club and association funding to \textbf{150+} student organizations while chairing five committees on Policy, Funding, Campus Life, Campaigns, and Strategy.
+  \item Contributed to SC14/SC11 policy updates for information systems and wireless network governance, improving digital policy outcomes for \textbf{70,000+} UBC students.
+  \item Delivered engagement programs such as Orientation Expo, Cultural Festivals, Campus BBQs, and Community Meals, serving \textbf{thousands} of students and strengthening campus cohesion.
+\end{resumeItems}
+
+\entry{Student Support Analyst (Co-op)}{May 2024 -- Apr 2025}{UBC IT Services}{Kelowna, BC}
+\begin{resumeItems}
+  \item Resolved \textbf{110+} ServiceNow tickets daily across Wi-Fi, CWL, MFA, Microsoft 365, printing, hardware, and account systems for \textbf{12,000+} students and staff.
+  \item Reduced repeat incidents and accelerated resolution by analyzing ticket patterns, documenting trends, and coordinating workflow fixes with UBC Vancouver IT.
+  \item Rebuilt Student Support Knowledge Base article \textbf{KB0019190} using HTML/CSS/TypeScript, improving discoverability and accessibility for campus-wide users.
+  \item Supported Microsoft 365 migration and AI chatbot deployment, automating frequent requests and boosting support team capacity.
+\end{resumeItems}
+
+\sectionTitle{Projects}
+\project{Tobii Pro Eye-Tracking Behavior Analytics}{Research Pipeline Architect}{Jan 2026 -- Present}
+\begin{resumeItems}
+  \item Built a reproducible Python + Docker ETL pipeline for \textbf{\$25K} Tobii Pro Glasses 3 datasets, ingesting gaze, IMU, pupillometry, scene-camera, and event exports into synchronized behavioral metrics.
+  \item Automated fixation, heatmap, Time to First Fixation, pupil-diameter, and confusion-event computation, turning raw sensor streams into research-ready HCI insights.
+  \item Deployed a Flask/Dash upload service with interactive dashboards, making high-frequency usability data explorable for researcher review.
+\end{resumeItems}
+
+\project{TSX Quantitative Portfolio Optimization}{Data \& Systems Lead}{Jan 2026 -- Present}
+\begin{resumeItems}
+  \item Built a TSX optimization engine processing \textbf{37 months} of historical prices across \textbf{10 equities}, converting raw market data into calibrated log returns for Modern Portfolio Theory.
+  \item Modeled and validated an \textbf{11x11 variance-covariance matrix} and solved Markowitz optimization with Solver-backed portfolio weights, prioritizing data integrity over output bias.
+  \item Led the data-engine track for a \textbf{3-person team}, producing risk-return frontier visualizations and quantitative insights used to assess portfolio efficiency and diversification tradeoffs.
+\end{resumeItems}
+
+\project{SoccerNet Jersey Recognition Pipeline}{Pipeline Architect}{Jan 2026 -- Present}
+\begin{resumeItems}
+  \item Improved jersey recognition accuracy from \textbf{87.12\%} to \textbf{88.52\%} across \textbf{1,211} tracklets by adding quality filtering, digit correction, and temporal consistency logic.
+  \item Profiled a \textbf{5-stage} computer vision workflow, separating \textbf{\textasciitilde{}900} images/sec preprocessing from \textbf{\textasciitilde{}78} images/sec PARSeq recognition to identify bottlenecks.
+  \item Added quality filtering, digit correction, temporal consistency, and test-time augmentation; quality filtering produced the largest lift with \textbf{+12} corrected tracklets.
+\end{resumeItems}
+
+\project{TA Allocation \& Management System}{Backend Project Lead}{May 2025 -- Aug 2025}
+\begin{resumeItems}
+  \item Designed a Flask/MySQL allocation platform processing \textbf{250+} TA applications per term, replacing error-prone spreadsheet workflows and manual conflict checks.
+  \item Implemented constraint-based assignment logic and role-based access control, cutting TA assignment processing time by \textbf{70\%} compared with spreadsheet workflows.
+  \item Built analytics dashboards and administrative views across \textbf{36+} backend features, improving visibility into applications, assignments, and scheduling conflicts.
+\end{resumeItems}
+
+\sectionTitle{Skills}
+\textbf{Programming:} Python, SQL, JavaScript/TypeScript, R, C/C++, HTML, CSS \\
+\textbf{Tools:} Flask/Dash, Docker, GitHub Actions, REST APIs, OpenCV, Tableau, PowerBI \\
+\textbf{Data Engineering:} ETL/ELT Pipelines, Sensor Data Processing, Database Design (MySQL, MongoDB) \\
+\textbf{Certifications:} Bloomberg Markets Concepts, Adobe Experience Platform, Google Analytics 4, FOODSAFE Level 1
+
+\end{document}

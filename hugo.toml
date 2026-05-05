@@ -55,6 +55,11 @@ theme = "PaperMod"
         url = "/about"
         weight = 30
     [[menu.main]]
+        identifier = "resume"
+        name = "Resume"
+        url = "/resume.pdf"
+        weight = 35
+    [[menu.main]]
         identifier = "contact"
         name = "Contact"
         url = "/contact"

@@ -1,6 +1,7 @@
 # Hugo default output directory
 /public
 /resources
+resume/build/
 
 # Temporary files
 .hugo_build.lock
