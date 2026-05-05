@@ -11,10 +11,10 @@
   <h1 class="operator-title">Aaditya Golash</h1>
   <p class="operator-subtitle">I build practical systems across product, operations, data, and engineering.</p>
   <div class="operator-actions">
-    <a class="retro-btn" href="{{ "/systems/" | relURL }}">VIEW_SYSTEMS</a>
-    <a class="retro-btn" href="{{ "/posts/" | relURL }}">OPEN_LAB</a>
-    <a class="retro-btn" href="{{ "/resume.pdf" | relURL }}" target="_blank" rel="noopener noreferrer">RESUME</a>
-    <a class="retro-btn" href="{{ "/contact/" | relURL }}">CONTACT</a>
+    <a class="retro-btn" href="{{ "systems/" | relURL }}">VIEW_SYSTEMS</a>
+    <a class="retro-btn" href="{{ "posts/" | relURL }}">OPEN_LAB</a>
+    <a class="retro-btn" href="{{ "resume.pdf" | relURL }}" target="_blank" rel="noopener noreferrer">RESUME</a>
+    <a class="retro-btn" href="{{ "contact/" | relURL }}">CONTACT</a>
   </div>
 </section>
 
@@ -45,6 +45,40 @@
     {{- $featured = where $featured "Params.featured" true -}}
     {{- $featured = sort $featured "Weight" "asc" -}}
     {{- range first 4 $featured }}
+    <article class="featured-card">
+      {{- with .Params.ascii_cover }}
+      <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>
+      {{- end }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>
+        {{- with .Params.description -}}
+          {{ . }}
+        {{- else -}}
+          {{ .Summary | plainify | htmlUnescape }}
+        {{- end -}}
+      </p>
+      {{- with .Params.role_alignment }}
+      <div class="pill-row">
+        {{- range . }}
+        <span class="role-pill">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      <a class="featured-link" href="{{ .RelPermalink }}">Read Case Study</a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+
+<section class="home-panel">
+  <pre class="section-divider" aria-hidden="true">--[ OTHER PROJECTS ]--------------------</pre>
+  <h2>Other Projects</h2>
+  <p class="section-kicker">Additional work from the resume, each with a case study and clear impact.</p>
+  <div class="featured-grid">
+    {{- $other := where site.RegularPages "Type" "posts" -}}
+    {{- $other = where $other "Params.featured" false -}}
+    {{- $other = sort $other "Weight" "asc" -}}
+    {{- range first 4 $other }}
     <article class="featured-card">
       {{- with .Params.ascii_cover }}
       <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>
