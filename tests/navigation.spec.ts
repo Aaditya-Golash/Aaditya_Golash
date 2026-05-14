@@ -4,6 +4,8 @@ import { origin, primaryPages, sitePath, siteRoot, siteUrl } from './site';
 const standardLinks = [
   { label: 'View Projects', path: sitePath('systems/') },
   { label: 'Resume', path: sitePath('resume.pdf') },
+  { label: 'GitHub', path: 'https://github.com/Aaditya-Golash' },
+  { label: 'LinkedIn', path: 'https://linkedin.com/in/aaditya-golash' },
   { label: 'Contact', path: sitePath('contact/') },
 ];
 

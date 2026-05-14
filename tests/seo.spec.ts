@@ -49,5 +49,11 @@ test.describe('SEO, sharing metadata, and crawler basics', () => {
     expect(links.filter((link) => link.href.includes('/Aaditya_Golash/Aaditya_Golash/'))).toEqual([]);
     expect(links.filter((link) => link.href.startsWith('javascript:'))).toEqual([]);
     expect(links.filter((link) => link.target === '_blank' && !link.rel.includes('noopener'))).toEqual([]);
+    expect(links).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ text: 'GitHub', href: 'https://github.com/Aaditya-Golash', target: '_blank' }),
+        expect.objectContaining({ text: 'LinkedIn', href: 'https://linkedin.com/in/aaditya-golash', target: '_blank' }),
+      ]),
+    );
   });
 });

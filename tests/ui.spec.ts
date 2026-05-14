@@ -17,10 +17,12 @@ test.describe('Homepage UI and visual structure', () => {
     await expect(page.locator('.status-grid')).toContainText('Open to relocation');
 
     const actions = page.locator('.operator-actions a.retro-btn');
-    await expect(actions).toHaveCount(3);
+    await expect(actions).toHaveCount(5);
     await expect(actions.nth(0)).toHaveText('View Projects');
     await expect(actions.nth(1)).toHaveText('Resume');
-    await expect(actions.nth(2)).toHaveText('Contact');
+    await expect(actions.nth(2)).toHaveText('GitHub');
+    await expect(actions.nth(3)).toHaveText('LinkedIn');
+    await expect(actions.nth(4)).toHaveText('Contact');
   });
 
   test('navigation header is present and accessible', async ({ page }) => {
