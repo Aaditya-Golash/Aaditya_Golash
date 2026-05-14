@@ -9,10 +9,12 @@ test.describe('Homepage UI and visual structure', () => {
   test('hero section loads with brand statement and core action buttons', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Aaditya Golash' })).toBeVisible();
     await expect(page.locator('.operator-subtitle')).toHaveText(
-      'CS + Management student at UBC building workflow, data, and product systems for real operational problems.'
+      'BSc Computer Science major + Management minor at UBC, building workflow, data, and product systems for real operational problems.'
     );
     await expect(page.locator('.proof-strip')).toContainText('Reduced TA allocation admin time by 70%');
     await expect(page.locator('.proof-strip')).toContainText('Oversaw $1.9M operating budget');
+    await expect(page.locator('.status-grid')).toContainText('Valid Canadian work permit');
+    await expect(page.locator('.status-grid')).toContainText('Open to relocation');
 
     const actions = page.locator('.operator-actions a.retro-btn');
     await expect(actions).toHaveCount(3);

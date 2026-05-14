@@ -7,7 +7,7 @@ theme = "PaperMod"
 [params]
     env = "production"
     title = "Aaditya Golash"
-    description = "CS + Management student at UBC building workflow, data, and product systems for real operational problems."
+    description = "UBC BSc Computer Science major and Management minor building workflow, data, and product systems for real operational problems."
     author = "Aaditya"
     defaultTheme = "dark"
     disableThemeToggle = false
@@ -22,7 +22,7 @@ theme = "PaperMod"
     [params.profileMode]
         enabled = true
         title = "Aaditya Golash"
-        subtitle = "CS + Management student at UBC building workflow, data, and product systems for real operational problems."
+        subtitle = "UBC BSc Computer Science major and Management minor building workflow, data, and product systems for real operational problems."
         displayFullContent = false
 
         [[params.profileMode.buttons]]

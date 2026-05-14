@@ -45,5 +45,7 @@ test.describe('Content freshness and portfolio hygiene', () => {
     expect(home).toContain('Oversaw $1.9M operating budget');
     expect(home).toContain('Built funded marketplace MVP');
     expect(home).toContain('Role Fit Snapshot');
+    expect(home).toContain('Valid Canadian work permit');
+    expect(home).toContain('Open to relocation');
   });
 });

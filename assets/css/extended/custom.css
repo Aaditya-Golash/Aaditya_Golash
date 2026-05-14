@@ -138,6 +138,31 @@ a:hover {
     box-shadow: 0 18px 40px rgba(5, 11, 6, 0.08);
 }
 
+.pagination {
+    margin-top: 1.5rem;
+    gap: 0.75rem;
+}
+
+.pagination a {
+    color: #001f08 !important;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    font-weight: 700;
+    min-width: 8.5rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.28);
+}
+
+.pagination a:hover,
+.pagination a:focus-visible {
+    color: #000 !important;
+    background: #7cff9c;
+    text-shadow: none;
+    outline: 2px solid var(--content);
+    outline-offset: 3px;
+}
+
 pre,
 code,
 .post-content pre code {
@@ -465,6 +490,22 @@ code,
     background: color-mix(in srgb, var(--code-block-bg) 82%, transparent);
     font-size: 0.82rem;
     line-height: 1.3;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.65rem;
+    margin-top: 0.95rem;
+}
+
+.status-grid span {
+    border-left: 3px solid var(--primary);
+    padding: 0.42rem 0.65rem;
+    background: color-mix(in srgb, var(--code-block-bg) 78%, transparent);
+    color: var(--content);
+    font-size: 0.86rem;
+    line-height: 1.35;
 }
 
 .terminal-line {

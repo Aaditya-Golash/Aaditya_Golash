@@ -6,11 +6,13 @@ draft: false
 
 ## About
 
-> `> PROFILE: CS_MANAGEMENT_UBC`
+> `> PROFILE: BSC_CS_MAJOR / MANAGEMENT_MINOR`
 > `> FOCUS: PRODUCT / SOFTWARE / DATA / OPERATIONS`
-> `> STATUS: FINAL_YEAR`
+> `> STATUS: UBC_COOP / DISTINCTION / DEANS_LIST`
 
-I am a final-year Computer Science + Management student at UBC building practical systems across software, product, data, and operations. The common thread is turning messy workflows into tools, processes, or analyses that people can actually use.
+I am a final-year UBC Co-op student completing a BSc with a Computer Science major and Management minor, graduating with distinction and Dean's List standing. I am based in British Columbia, hold a valid Canadian work permit and driver's licence, and am open to relocation.
+
+I build practical systems across software, product, data, and operations. The common thread is turning messy workflows into tools, processes, or analyses that people can actually use.
 
 I grew up between India and the Middle East, which shaped how I think about structure, adaptation, and the gap between how things are supposed to work and how they actually work.
 

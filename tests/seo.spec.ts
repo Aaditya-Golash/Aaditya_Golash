@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { primaryPages, projectPages, sitePath, siteRoot } from './site';
 
 const description =
-  'CS + Management student at UBC building workflow, data, and product systems for real operational problems.';
+  'UBC BSc Computer Science major and Management minor building workflow, data, and product systems for real operational problems.';
 
 test.describe('SEO, sharing metadata, and crawler basics', () => {
   test('homepage exposes useful metadata for recruiters and link previews', async ({ page }) => {
