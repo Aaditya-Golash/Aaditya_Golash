@@ -53,3 +53,7 @@ venv.bak/
 # Backup files
 *.bak
 *.backup
+
+# Audit and testing documentation
+RECRUITER_UX_AUDIT.md
+TESTING.md
