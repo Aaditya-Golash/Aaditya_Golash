@@ -9,12 +9,29 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.158.0
+      HUGO_ENVIRONMENT: production
+      TZ: America/Los_Angeles
+      SITE_BASE_PATH: /Aaditya_Golash
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - run: sudo apt-get update && sudo apt-get install -y hugo
-      - run: npm install
+          cache: npm
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - run: npm ci
       - run: npx playwright install --with-deps
+      - run: npm run build
       - run: npm test
