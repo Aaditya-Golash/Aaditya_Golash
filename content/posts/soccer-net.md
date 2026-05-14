@@ -1,14 +1,14 @@
 ---
 title: "Deep Learning: SoccerNet Jersey Recognition"
 date: 2026-03-15
-weight: 10
+weight: 70
 draft: false
 featured: false
 categories: ["swe", "data"]
 tags: ["PyTorch", "Computer Vision", "Python"]
-description: "Developed a jersey-recognition pipeline for fast-paced sports footage using PyTorch and custom data preparation."
+description: "Built a jersey-number recognition pipeline for soccer broadcast footage using ResNet filtering, PARSeq recognition, and Top-K confidence ranking."
 system_group: "data"
-role_alignment: ["SWE", "Data / Analytics", "Quant-Adjacent"]
+role_alignment: ["Computer Vision", "Deep Learning", "Sports Analytics"]
 ascii_cover: |-
   .-JERSEY--.
   [ 10 ] [ 7 ]
@@ -20,18 +20,21 @@ ascii_cover: |-
 > `> STATUS: EXPERIMENTAL_PIPELINE`
 
 ## Problem
-Player identification from broadcast-style soccer footage is noisy because of motion blur, occlusion, and camera changes.
+Player identification from broadcast-style soccer footage is noisy because of motion blur, occlusion, camera changes, low-quality frames, and inconsistent player visibility.
 
 ## Context
 This project focused on extracting stable jersey-level signal in a high-speed visual environment where frame quality and camera angle can change quickly.
 
 ## What I Built
-I built a deep learning workflow for jersey recognition with custom data preparation, training loops, and evaluation across challenging visual conditions.
+I built an end-to-end computer vision pipeline to recognize soccer jersey numbers from broadcast video using sports tracking datasets, frame-level video processing, player detections, and deep learning models.
 
 ## Key Decisions
 - Prioritized dataset quality and labeling strategy before model complexity.
 - Tuned preprocessing for motion and lighting variance to improve model robustness.
 - Built the training pipeline for iterative experiments and repeatable comparisons.
+- Implemented a ResNet-based legibility classifier to filter low-quality frames before recognition.
+- Used a PARSeq sequence recognition model for jersey-number prediction.
+- Designed a Top-K confidence ranking system to prioritize the most legible frames.
 
 ## Tradeoffs
 - Focused on jersey recognition performance rather than full player tracking.
@@ -40,13 +43,14 @@ I built a deep learning workflow for jersey recognition with custom data prepara
 
 ## Impact
 - Produced a functioning jersey-recognition pipeline on difficult sports footage.
-- Improved understanding of computer vision tradeoffs under real-world constraints.
+- Reduced noisy inputs by filtering low-legibility frames before recognition.
+- Generated structured outputs linking player identities, timestamps, and jersey numbers for downstream sports analytics.
 - Created reusable code for future sports analytics experiments.
 
 ## Tech Stack
-`Python` `PyTorch` `OpenCV` `NumPy`
+`Python` `PyTorch` `OpenCV` `NumPy` `ResNet` `PARSeq`
 
 ## Role Alignment
-- `SWE`: Built and iterated on model training infrastructure.
-- `Data / Analytics`: Structured data and evaluation loops for usable model signal.
-- `Quant-Adjacent`: Worked with noisy, high-frequency visual data and performance metrics.
+- `Computer Vision`: Built frame and player-detection workflows for broadcast footage.
+- `Deep Learning`: Combined classifier and sequence-recognition stages.
+- `Sports Analytics`: Structured recognition outputs for downstream match analysis.

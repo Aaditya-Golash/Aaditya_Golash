@@ -1,7 +1,11 @@
 {{ define "main" }}
-<a href="javascript:history.back()" class="back-btn">< RETURN_TO_PREVIOUS</a>
+<a href="{{ "" | relLangURL }}" class="back-btn">< Back Home</a>
 
-<p class="status-text">> STANDBY: SECURE UPLINK READY</p>
+<p class="status-text">> contact channel ready</p>
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
 
 {{- if .Content }}
 <div class="contact-intro">
@@ -24,34 +28,34 @@
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
 
     <div class="input-group">
-      <label for="name">ID_IDENTIFIER:</label>
+      <label for="name">Name</label>
       <input type="text" name="name" id="name" required placeholder="Your Name">
     </div>
 
     <div class="input-group">
-      <label for="email">RETURN_PATH:</label>
+      <label for="email">Email</label>
       <input type="email" name="email" id="email" required placeholder="email@domain.com">
     </div>
 
     <div class="input-group">
-      <label for="message">TRANSMISSION:</label>
+      <label for="message">Message</label>
       <textarea name="message" id="message" required rows="5" placeholder="Enter message..."></textarea>
     </div>
 
     <div class="input-group captcha-group">
-      <label for="captcha_answer">HUMAN_CHECK:</label>
+      <label for="captcha_answer">Human check</label>
       <p id="captcha-prompt" class="captcha-prompt">Solve the check:</p>
       <input type="text" name="captcha_answer" id="captcha_answer" required inputmode="numeric" placeholder="Enter answer">
     </div>
 
     {{- if site.Params.contact.turnstileSiteKey }}
     <div class="input-group captcha-group">
-      <label>HUMAN_VERIFICATION:</label>
+      <label>Human verification</label>
       <div class="cf-turnstile" data-sitekey="{{ site.Params.contact.turnstileSiteKey }}"></div>
     </div>
     {{- end }}
 
-    <button id="contact-submit" type="submit" class="retro-btn">INITIALIZE_SEND</button>
+    <button id="contact-submit" type="submit" class="retro-btn">Send Message</button>
     <p id="contact-status" class="contact-status" aria-live="polite"></p>
   </form>
 </div>
@@ -105,7 +109,7 @@
     delete payload.captcha_answer;
 
     submitBtn.disabled = true;
-    submitBtn.textContent = "SENDING...";
+    submitBtn.textContent = "Sending...";
 
     try {
       const response = await fetch(form.action, {
@@ -133,7 +137,7 @@
       setStatus("Network error while sending. Please retry.", "is-error");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = "INITIALIZE_SEND";
+      submitBtn.textContent = "Send Message";
       if (hasCaptcha && window.turnstile) {
         window.turnstile.reset();
       }

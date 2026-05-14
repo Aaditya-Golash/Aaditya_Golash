@@ -9,10 +9,10 @@
 
 {{- $posts := where site.RegularPages "Type" "posts" -}}
 {{- $groups := slice
-  (dict "key" "academic" "title" "Academic Systems" "desc" "Coursework and capstone builds where technical architecture was the core delivery.")
-  (dict "key" "organizational" "title" "Organizational Systems" "desc" "Systems built for governance, operations, and institutional reliability.")
-  (dict "key" "data" "title" "Data / Analytical Systems" "desc" "Signal-heavy or data-heavy pipelines designed for decision support.")
-  (dict "key" "growth" "title" "Growth / Distribution Systems" "desc" "Projects focused on adoption, attention, and go-to-market execution.")
+  (dict "key" "academic" "title" "Technical Builds" "desc" "Software and architecture projects where implementation quality was the core delivery.")
+  (dict "key" "organizational" "title" "Operational Impact" "desc" "Governance, process, budget, and service systems built for reliability.")
+  (dict "key" "data" "title" "Research / Data Systems" "desc" "Computer vision, signal processing, and analytical pipelines designed for usable insight.")
+  (dict "key" "growth" "title" "Product / Growth" "desc" "Projects focused on market validation, distribution, audience growth, and go-to-market execution.")
 -}}
 
 {{- range $groups }}
@@ -41,7 +41,7 @@
         {{- end }}
       </div>
       {{- end }}
-      <a class="featured-link" href="{{ .RelPermalink }}">Open Case Study</a>
+      <a class="featured-link" href="{{ .RelPermalink }}">View Project</a>
     </article>
     {{- end }}
   </div>

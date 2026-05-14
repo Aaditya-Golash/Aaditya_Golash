@@ -1,14 +1,14 @@
 ---
 title: "System Architecture: TA Allocation & Management"
 date: 2025-08-15
-weight: 15
+weight: 10
 draft: false
 featured: true
 categories: ["swe", "product", "operations"]
 tags: ["Flask", "MySQL", "Docker", "Agile", "RBAC"]
-description: "Redesigning UBC CS TA allocation workflows and reducing allocation latency by 70%."
+description: "Built backend and workflow infrastructure for UBC CS TA allocation, processing 250+ applications and reducing admin time by 70%."
 system_group: "academic"
-role_alignment: ["APM", "Consulting", "SWE", "Data / Analytics"]
+role_alignment: ["Backend", "Workflow Automation", "Testing"]
 ascii_cover: |-
   .-TA-ALLOC--.
   TA  TA  TA
@@ -21,19 +21,20 @@ ascii_cover: |-
 > `> CLIENT: UBC COMPUTER SCIENCE DEPARTMENT`
 
 ## Problem
-TA allocation was managed through spreadsheets and long email threads. Conflict checks were mostly manual, which made scheduling errors and delays common.
+TA allocation was managed through spreadsheets and long email threads. Conflict checks, reporting, permissions, and scheduling decisions were mostly manual, which made errors and delays common during peak allocation periods.
 
 ## Context
 The department handled more than 250 applications each term, with multiple stakeholders needing visibility into decisions. Manual coordination made the process slow and hard to audit.
 
 ## What I Built
-I led backend infrastructure and testing in a 6-person Agile team. We built a full workflow platform for application review, role assignment, conflict checks, and administrative tracking.
+I led backend term/course management and testing modules in a 6-person Agile team. We built a full-stack platform for application review, role assignment, conflict checks, analytics dashboards, reporting, and administrative tracking.
 
 ## Key Decisions
 - We used `Flask + MySQL + Docker` so the stack stayed simple to deploy and maintain in a university environment.
-- We implemented `RBAC` early to keep faculty/admin/student permissions clear.
+- We implemented secure `RBAC` early to keep faculty/admin/student permissions clear.
 - We automated schedule conflict detection so reviewers could focus on selection quality instead of manual validation.
 - We set a strict testing bar (`Pytest` + `Vitest`) to reduce failure risk during peak submission periods.
+- We designed export paths for CSV/PDF reporting so administrators could keep existing review and recordkeeping habits.
 
 ## Tradeoffs
 - We prioritized reliability and access control over advanced optimization features in v1.
@@ -44,15 +45,15 @@ I led backend infrastructure and testing in a 6-person Agile team. We built a fu
 - Reduced allocation administration time by **70%**.
 - Centralized and processed **250+ applications** through one system.
 - Delivered **36+ stakeholder requirements** within capstone constraints.
+- Delivered **100% test coverage** with `Pytest` and `Vitest`, with more than **95% pass rate** across 50 unit and integration tests.
 - Awarded **3rd Place Overall** at the UBC Okanagan Capstone Competition.
 
 ## Tech Stack
-`Python` `Flask` `MySQL` `Docker` `Pytest` `Vitest` `RBAC`
+`Python` `Flask` `MySQL` `Docker` `SQLAlchemy` `Pytest` `Vitest` `RBAC` `Tailwind CSS`
 
 ## Role Alignment
-- `APM`: Balanced stakeholder requirements, delivery scope, and release quality.
-- `Consulting`: Mapped messy institutional workflow into an operational system.
-- `SWE`: Built and tested production-ready backend infrastructure.
-- `Data / Analytics`: Used structured data and validation logic to improve allocation decisions.
+- `Backend`: Built core term/course management and allocation infrastructure.
+- `Workflow Automation`: Replaced spreadsheet/email handoffs with structured review flows.
+- `Testing`: Raised reliability through unit and integration test coverage.
 
 Source code: [github.com/Aaditya-Golash/ta-allocation-system-capstone](https://github.com/Aaditya-Golash/ta-allocation-system-capstone)

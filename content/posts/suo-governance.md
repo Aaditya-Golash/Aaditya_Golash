@@ -1,14 +1,14 @@
 ---
 title: "Fiscal Oversight: $1.9M Operating Budget"
 date: 2026-03-10
-weight: 20
+weight: 40
 draft: false
 featured: true
 categories: ["product", "data", "operations"]
 tags: ["Financial Analysis", "Governance", "Risk Management", "Policy Development"]
 description: "Oversaw a $1.9M operating budget and built governance structures for clearer institutional decisions."
 system_group: "organizational"
-role_alignment: ["Consulting", "APM", "Operations", "Data / Analytics"]
+role_alignment: ["Financial Ops", "Governance", "Stakeholder Management"]
 ascii_cover: |-
   .-BUDGET----.
   1.9M  CTRL

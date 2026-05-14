@@ -7,14 +7,14 @@ systems thinking applied across engineering, operations, product, and analytics.
 
 - Not a blog-first site.
 - Home is a recruiter-facing narrative page.
-- Systems page is the primary map of flagship work.
-- Lab (`/posts/`) holds experiments, implementation logs, and secondary work.
+- Projects page is the primary map of flagship work.
+- All Work (`/posts/`) holds the broader project archive.
 
 ## Core Routes
 
-- `/` Home (identity, how I think, curated featured projects)
-- `/systems/` Grouped system work (academic, organizational, data/analytical, growth/distribution)
-- `/posts/` Lab index
+- `/` Home (role fit, proof points, curated featured projects)
+- `/systems/` Grouped project work (technical builds, operational impact, research/data, product/growth)
+- `/posts/` All Work index
 - `/about/` Background and context
 - `/contact/` Formspree contact form with anti-bot checks
 - `/contact-success/` Post-submit success page
@@ -33,7 +33,7 @@ content/
 |   |-- product/_index.md
 |   `-- swe/_index.md
 `-- posts/
-    |-- _index.md  (Lab page)
+    |-- _index.md  (All Work page)
     `-- *.md       (case-study style entries)
 ```
 
@@ -69,6 +69,8 @@ Contact flow includes:
 - Optional Cloudflare Turnstile (if configured)
 - Formspree submission via AJAX with redirect to `/contact-success/`
 
+Current production hardening note: `turnstileSiteKey` is intentionally empty, so the form uses the honeypot and math challenge only. Add a Cloudflare Turnstile site key before expecting heavy public traffic or spam exposure.
+
 Configure in `hugo.toml`:
 
 ```toml
@@ -83,8 +85,20 @@ turnstileSiteKey = "YOUR_TURNSTILE_SITE_KEY"
 hugo server -D
 ```
 
+The default `baseURL` targets GitHub Pages at `/Aaditya_Golash/`. If the site moves to a custom domain or a different project path, override it during build:
+
+```bash
+hugo --minify --baseURL https://example.com/
+```
+
 ## Production Build
 
 ```bash
-hugo --minify
+npm run build
+```
+
+## Regression Checks
+
+```bash
+npm test
 ```

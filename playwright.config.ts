@@ -1,4 +1,7 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
+
+const siteBasePath = process.env.SITE_BASE_PATH ?? '/Aaditya_Golash';
+const normalizedBasePath = siteBasePath.replace(/\/$/, '');
 
 export default defineConfig({
   testDir: './tests',
@@ -9,7 +12,7 @@ export default defineConfig({
   fullyParallel: true,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:1313/Aaditya_Golash',
+    baseURL: `http://127.0.0.1:1313${normalizedBasePath}`,
     viewport: { width: 1280, height: 900 },
     actionTimeout: 10 * 1000,
     ignoreHTTPSErrors: true,

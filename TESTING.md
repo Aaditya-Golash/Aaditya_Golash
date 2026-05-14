@@ -15,8 +15,8 @@
 - Validate the header, main, and footer landmark sections are present.
 
 ### 2. Functional Navigation
-- Test the top menu routes to `Home`, `Systems`, `Lab`, `About`, and `Contact`.
-- Validate the homepage action buttons for `VIEW_SYSTEMS`, `OPEN_LAB`, `RESUME`, and `CONTACT`.
+- Test the top menu routes to `Home`, `Projects`, `All Work`, `About`, and `Contact`.
+- Validate the homepage action buttons for `View Projects`, `Resume`, and `Contact`.
 - Confirm all primary routes return a non-404 HTTP status.
 - Guard against duplicate path generation issues such as `/Aaditya_Golash/Aaditya_Golash/`.
 
@@ -30,6 +30,12 @@
 - Any change to the homepage or layout should preserve the hero, navigation, and project card structure.
 - Build and test process should be repeatable via the provided Playwright configuration.
 - Future content changes should be evaluated against the existing suite to avoid hidden regressions.
+
+### 5. Responsive, SEO, and Content Hygiene
+- Validate desktop, tablet, mobile, and narrow mobile viewports for horizontal overflow and clipped text.
+- Confirm project pages retain their ASCII covers and readable mobile headings.
+- Check metadata needed for search and link previews: title, description, canonical, Open Graph, robots, and viewport.
+- Guard portfolio hygiene: lockfile exists, resume PDF is present and recent, and project markdown includes required front matter and key sections.
 
 ## How to Run
 1. Install dependencies in the project root:
@@ -45,7 +51,16 @@
    npm run test:ui
    npm run test:navigation
    npm run test:accessibility
+   npm run test:responsive
+   npm run test:seo
+   npm run test:content
    ```
+
+## Environment Options
+
+- `SITE_BASE_PATH` changes the tested path prefix. Default: `/Aaditya_Golash/`.
+- `SITE_ORIGIN` changes the tested local origin. Default: `http://127.0.0.1:1313`.
+- `CONTENT_MAX_AGE_DAYS` changes the resume freshness threshold. Default: `240`.
 
 ## Notes
 - This test suite is intentionally scoped to the current Hugo site structure.

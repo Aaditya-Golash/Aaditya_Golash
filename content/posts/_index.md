@@ -1,6 +1,6 @@
 ---
-title: "Lab"
-description: "Experiments, implementation logs, and secondary builds. This is where I test ideas before they become production systems."
+title: "All Work"
+description: "Full project archive across software, product, research, data, operations, and growth."
 ---
 
-The Lab is the running log of how I think in practice: test assumptions, ship quickly, learn from edge cases, and improve the system.
+This archive keeps the broader body of work visible beyond the strongest featured projects.

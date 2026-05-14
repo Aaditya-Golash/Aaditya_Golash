@@ -1,29 +1,48 @@
 {{- define "main" -}}
 <section class="operator-hero">
   <pre class="hero-ascii" aria-hidden="true">
-  .--[ SYSTEM OPERATOR ]--.
-  | detect -> map -> build |
-  '------------------------'
+  .--[ SYSTEMS / PRODUCT / DATA ]--.
+  | scan role -> show proof -> open work |
+  '-------------------------------------'
   </pre>
-  <p class="terminal-line">&gt; detecting friction...</p>
-  <p class="terminal-line">&gt; mapping system...</p>
-  <p class="terminal-line">&gt; executing solution...</p>
   <h1 class="operator-title">Aaditya Golash</h1>
-  <p class="operator-subtitle">I build practical systems across product, operations, data, and engineering.</p>
+  <p class="operator-subtitle">CS + Management student at UBC building workflow, data, and product systems for real operational problems.</p>
+  <div class="proof-strip" aria-label="Selected proof points">
+    <span>Reduced TA allocation admin time by 70%</span>
+    <span>Oversaw $1.9M operating budget</span>
+    <span>Built funded marketplace MVP</span>
+  </div>
   <div class="operator-actions">
-    <a class="retro-btn" href="{{ "systems/" | absLangURL }}">VIEW_SYSTEMS</a>
-    <a class="retro-btn" href="{{ "posts/" | absLangURL }}">OPEN_LAB</a>
-    <a class="retro-btn" href="{{ "resume.pdf" | absLangURL }}" target="_blank" rel="noopener noreferrer">RESUME</a>
-    <a class="retro-btn" href="{{ "contact/" | absLangURL }}">CONTACT</a>
+    <a class="retro-btn" href="{{ "systems/" | relLangURL }}">View Projects</a>
+    <a class="retro-btn" href="{{ "resume.pdf" | relLangURL }}" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a class="retro-btn" href="{{ "contact/" | relLangURL }}">Contact</a>
   </div>
 </section>
 
 <section class="home-panel">
-  <pre class="section-divider" aria-hidden="true">--[ IDENTITY ]--------------------------</pre>
-  <h2>Identity</h2>
+  <pre class="section-divider" aria-hidden="true">--[ ROLE FIT ]--------------------------</pre>
+  <h2>Role Fit Snapshot</h2>
   <p>
-    Final-year CS + Management student at UBC. I grew up between India and the Middle East, which pushed me toward structured thinking, adaptability, and systems that hold up in real environments.
+    I fit roles where technical systems, user workflows, and operating constraints meet: APM, software engineering, data/analytics, operations, and consulting-adjacent work.
   </p>
+  <div class="role-fit-grid">
+    <div>
+      <h3>Product / APM</h3>
+      <p>Market validation, roadmap tradeoffs, stakeholder discovery, MVP scoping.</p>
+    </div>
+    <div>
+      <h3>SWE / Systems</h3>
+      <p>Python, TypeScript, React, Flask, MySQL, Docker, testing, automation.</p>
+    </div>
+    <div>
+      <h3>Data / Analytics</h3>
+      <p>Signal processing, computer vision, forecasting, dashboards, KPI design.</p>
+    </div>
+    <div>
+      <h3>Operations</h3>
+      <p>Workflow redesign, governance, budget oversight, service reliability.</p>
+    </div>
+  </div>
 </section>
 
 <section class="home-panel">
@@ -37,9 +56,9 @@
 </section>
 
 <section class="home-panel">
-  <pre class="section-divider" aria-hidden="true">--[ FEATURED SYSTEMS ]------------------</pre>
-  <h2>Featured Projects</h2>
-  <p class="section-kicker">Curated case studies that represent my strongest system work.</p>
+  <pre class="section-divider" aria-hidden="true">--[ FEATURED IMPACT ]-------------------</pre>
+  <h2>Featured Impact</h2>
+  <p class="section-kicker">The strongest proof points for a quick recruiter or hiring-manager scan.</p>
   <div class="featured-grid">
     {{- $featured := where site.RegularPages "Type" "posts" -}}
     {{- $featured = where $featured "Params.featured" true -}}
@@ -64,21 +83,21 @@
         {{- end }}
       </div>
       {{- end }}
-      <a class="featured-link" href="{{ .RelPermalink }}">Read Case Study</a>
+      <a class="featured-link" href="{{ .RelPermalink }}">View Project</a>
     </article>
     {{- end }}
   </div>
 </section>
 
 <section class="home-panel">
-  <pre class="section-divider" aria-hidden="true">--[ OTHER PROJECTS ]--------------------</pre>
-  <h2>Other Projects</h2>
-  <p class="section-kicker">Additional work from the resume, each with a case study and clear impact.</p>
+  <pre class="section-divider" aria-hidden="true">--[ MORE SIGNAL ]-----------------------</pre>
+  <h2>Additional Work</h2>
+  <p class="section-kicker">More technical, product, research, and growth work from the full portfolio.</p>
   <div class="featured-grid">
     {{- $other := where site.RegularPages "Type" "posts" -}}
     {{- $other = where $other "Params.featured" false -}}
     {{- $other = sort $other "Weight" "asc" -}}
-    {{- range first 4 $other }}
+    {{- range first 6 $other }}
     <article class="featured-card">
       {{- with .Params.ascii_cover }}
       <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>
@@ -98,9 +117,10 @@
         {{- end }}
       </div>
       {{- end }}
-      <a class="featured-link" href="{{ .RelPermalink }}">Read Case Study</a>
+      <a class="featured-link" href="{{ .RelPermalink }}">View Project</a>
     </article>
     {{- end }}
   </div>
+  <p class="all-work-link"><a class="featured-link" href="{{ "posts/" | relLangURL }}">Open All Work</a></p>
 </section>
 {{- end -}}

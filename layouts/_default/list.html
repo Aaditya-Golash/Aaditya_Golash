@@ -7,8 +7,8 @@
 {{- $displayTitle := .Title }}
 {{- $displayDescription := .Description }}
 {{- if and (eq .Kind "section") (eq .Section "posts") }}
-  {{- $displayTitle = "Lab" }}
-  {{- $displayDescription = "Experiments, implementation notes, and secondary builds. Core flagship work is curated on the Systems page." }}
+  {{- $displayTitle = "All Work" }}
+  {{- $displayDescription = "Full project archive across software, product, research, data, operations, and growth. Flagship work is curated on the Projects page." }}
 {{- end }}
 
 {{- if not .IsHome | and .Title }}

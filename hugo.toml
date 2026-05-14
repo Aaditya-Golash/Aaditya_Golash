@@ -1,3 +1,4 @@
+# GitHub Pages project URL. Override with `hugo --baseURL ...` if moving to a custom domain.
 baseURL = "https://aaditya-golash.github.io/Aaditya_Golash/"
 languageCode = "en-us"
 title = "Aaditya Golash"
@@ -6,7 +7,7 @@ theme = "PaperMod"
 [params]
     env = "production"
     title = "Aaditya Golash"
-    description = "Systems thinker building practical solutions across product, operations, data, and engineering."
+    description = "CS + Management student at UBC building workflow, data, and product systems for real operational problems."
     author = "Aaditya"
     defaultTheme = "dark"
     disableThemeToggle = false
@@ -14,16 +15,18 @@ theme = "PaperMod"
 
     [params.contact]
         formspreeEndpoint = "https://formspree.io/f/xlgpvayk"
+        # Empty means the form uses the built-in honeypot + math challenge only.
+        # Add a Cloudflare Turnstile site key here for stronger production spam protection.
         turnstileSiteKey = ""
 
     [params.profileMode]
         enabled = true
         title = "Aaditya Golash"
-        subtitle = "I build systems that reduce friction across organizations."
+        subtitle = "CS + Management student at UBC building workflow, data, and product systems for real operational problems."
         displayFullContent = false
 
         [[params.profileMode.buttons]]
-            name = "View Systems"
+            name = "View Projects"
             url = "systems/"
 
     [[params.socialIcons]]
@@ -41,12 +44,12 @@ theme = "PaperMod"
         weight = 5
     [[menu.main]]
         identifier = "systems"
-        name = "Systems"
+        name = "Projects"
         url = "systems/"
         weight = 10
     [[menu.main]]
         identifier = "lab"
-        name = "Lab"
+        name = "All Work"
         url = "posts/"
         weight = 20
     [[menu.main]]
@@ -66,4 +69,4 @@ theme = "PaperMod"
         weight = 40
 
 [markup.goldmark.renderer]
-  unsafe = true
+  unsafe = false

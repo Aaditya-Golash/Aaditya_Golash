@@ -1,14 +1,14 @@
 ---
-title: "Professional Certifications & Technical Credentials"
+title: "Credentials: Data, Automation & Markets"
 date: 2026-03-01
-weight: 40
+weight: 140
 draft: false
 featured: false
 categories: ["swe", "data", "product"]
 tags: ["Certifications", "Enterprise Data", "Automation", "Financial Markets"]
-description: "Focused credential stack spanning enterprise data systems, automation architecture, and market fundamentals."
+description: "Credential stack spanning Adobe data platforms, Zapier automation, Google Analytics, Bloomberg Market Concepts, research ethics, and nonprofit fundraising."
 system_group: "growth"
-role_alignment: ["APM", "Consulting", "Data / Analytics", "Quant-Adjacent"]
+role_alignment: ["Data Platforms", "Automation", "Market Fundamentals"]
 ascii_cover: |-
   .-CERTS----.
   AEP   BMC
@@ -30,6 +30,9 @@ I intentionally developed a credential stack across three domains:
 - `Adobe Experience Platform (AEP)` for enterprise data architecture
 - `Zapier AI` for process automation and workflow logic
 - `Bloomberg Market Concepts (BMC)` for market structure and quantitative fundamentals
+- `Google Analytics Certification` for digital measurement
+- `TCPS 2: CORE 2022` for human-subjects research ethics and privacy context
+- `NonprofitReady` fundraising and grant-seeking coursework for nonprofit operations
 
 ## Key Decisions
 - Chose certifications that reinforce system-level thinking, not isolated tools.
@@ -46,10 +49,9 @@ I intentionally developed a credential stack across three domains:
 - Added clear evidence of range for recruiter screening.
 
 ## Tech Stack
-`Enterprise Data Platforms` `Automation Workflows` `Financial Markets Fundamentals`
+`Adobe Experience Platform` `Adobe Customer Journey Analytics` `Google Analytics` `Zapier` `Bloomberg Market Concepts` `Research Ethics`
 
 ## Role Alignment
-- `APM`: Bridges product execution with system and stakeholder context.
-- `Consulting`: Supports structured, cross-domain problem framing.
-- `Data / Analytics`: Strengthens data platform and decision workflow understanding.
-- `Quant-Adjacent`: Adds market and instrument context relevant to analytics-heavy roles.
+- `Data Platforms`: Strengthens enterprise data and journey-analytics context.
+- `Automation`: Adds workflow automation and AI-agent implementation grounding.
+- `Market Fundamentals`: Adds finance and instrument context relevant to analytics-heavy roles.

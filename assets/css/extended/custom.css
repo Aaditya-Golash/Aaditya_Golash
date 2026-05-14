@@ -174,10 +174,16 @@ code,
 .nav {
     justify-content: flex-start !important;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .logo {
     margin-right: 1rem;
+}
+
+#menu {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
 }
 
 .back-btn {
@@ -288,6 +294,10 @@ code,
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.single-ascii-cover {
+    margin-top: 1.25rem;
 }
 
 .ascii-cover-title {
@@ -440,6 +450,23 @@ code,
     gap: 0.6rem;
 }
 
+.proof-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.55rem;
+    margin: 1rem 0 1.1rem;
+}
+
+.proof-strip span {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.75rem;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--code-block-bg) 82%, transparent);
+    font-size: 0.82rem;
+    line-height: 1.3;
+}
+
 .terminal-line {
     margin: 0.12rem 0;
     color: var(--secondary);
@@ -477,6 +504,31 @@ code,
 
 .thinking-list li {
     margin: 0.45rem 0;
+}
+
+.role-fit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.role-fit-grid > div {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem;
+    background: color-mix(in srgb, var(--code-block-bg) 74%, transparent);
+}
+
+.role-fit-grid h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
+}
+
+.role-fit-grid p {
+    margin: 0;
+    color: var(--content);
+    font-size: 0.88rem;
 }
 
 .section-kicker {
@@ -562,6 +614,10 @@ code,
     transform: scale(1.03);
 }
 
+.all-work-link {
+    margin: 1rem 0 0;
+}
+
 .featured-card,
 .systems-card {
     transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease, filter 0.25s ease;
@@ -606,6 +662,26 @@ code,
 }
 
 @media screen and (max-width: 640px) {
+    .nav {
+        gap: 0.65rem;
+    }
+
+    .logo {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #menu {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.45rem 0.8rem;
+        padding: 0;
+    }
+
+    #menu li {
+        margin: 0;
+    }
+
     .ascii-cover-art {
         font-size: 0.62rem;
     }
@@ -623,5 +699,30 @@ code,
 
     .hero-ascii {
         font-size: 0.78rem;
+    }
+
+    .featured-ascii {
+        display: none;
+    }
+
+    .proof-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .post-title {
+        font-size: 2.15rem;
+        line-height: 1.18;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .hero-ascii,
+    .section-divider {
+        font-size: 0.66rem;
+    }
+
+    .retro-btn {
+        min-width: 0;
+        width: 100%;
     }
 }

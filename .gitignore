@@ -3,6 +3,10 @@
 /resources
 resume/build/
 
+# Test/report artifacts
+/playwright-report/
+/test-results/
+
 # Temporary files
 .hugo_build.lock
 

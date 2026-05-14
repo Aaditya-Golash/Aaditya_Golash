@@ -1,7 +1,7 @@
 ---
-title: "Systems"
+title: "Projects"
 layout: "systems"
 weight: 8
 ---
 
-This is the clearest map of how I work. I look for friction, map the constraints, then build something people can actually use.
+This is the clearest map of the work: technical builds, research/data pipelines, operational systems, and product/growth projects with concrete scope and outcomes.

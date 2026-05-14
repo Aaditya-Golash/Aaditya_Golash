@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { siteRoot } from './site';
 
 test.describe('Accessibility, semantics, and web design fundamentals', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto(siteRoot);
   });
 
   test('page uses semantic sections and accessible link text', async ({ page }) => {

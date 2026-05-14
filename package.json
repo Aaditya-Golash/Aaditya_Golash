@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "hugo --minify",
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/ui.spec.ts",
     "test:navigation": "npx playwright test tests/navigation.spec.ts",
-    "test:accessibility": "npx playwright test tests/accessibility.spec.ts"
+    "test:accessibility": "npx playwright test tests/accessibility.spec.ts",
+    "test:responsive": "npx playwright test tests/responsive.spec.ts",
+    "test:seo": "npx playwright test tests/seo.spec.ts",
+    "test:content": "npx playwright test tests/content.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0"
