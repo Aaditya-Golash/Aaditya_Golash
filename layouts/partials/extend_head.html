@@ -1,0 +1,102 @@
+{{- $homeURL := "" | absLangURL -}}
+{{- $projectsURL := "systems/" | absLangURL -}}
+{{- $resumeURL := "resume.pdf" | absLangURL -}}
+{{- $contactURL := "contact/" | absLangURL -}}
+{{- $githubURL := "https://github.com/Aaditya-Golash" -}}
+{{- $linkedinURL := "https://linkedin.com/in/aaditya-golash" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ $homeURL }}#aaditya-golash",
+      "name": "Aaditya Golash",
+      "url": "{{ $homeURL }}",
+      "sameAs": [
+        "{{ $githubURL }}",
+        "{{ $linkedinURL }}"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "The University of British Columbia"
+      },
+      "hasCredential": [
+        "BSc Computer Science major, Management minor",
+        "UBC Co-op student",
+        "Dean's List",
+        "Graduating with distinction"
+      ],
+      "knowsAbout": [
+        "Software engineering",
+        "Product management",
+        "Data analytics",
+        "Computer vision",
+        "Operations",
+        "Workflow automation",
+        "Human-computer interaction"
+      ],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "British Columbia, Canada"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Open to relocation"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ $homeURL }}#website",
+      "name": "Aaditya Golash Portfolio",
+      "url": "{{ $homeURL }}",
+      "author": {
+        "@id": "{{ $homeURL }}#aaditya-golash"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ $homeURL }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Aaditya Golash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aaditya Golash is a UBC BSc Computer Science major and Management minor focused on software, product, data, operations, and workflow systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Aaditya Golash based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aaditya Golash is based in British Columbia, Canada, and is open to relocation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What roles is Aaditya Golash targeting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aaditya Golash is targeting roles where software engineering, product thinking, data analytics, operations, and stakeholder workflows meet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I see Aaditya Golash's work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aaditya Golash's portfolio projects are available on the Projects and All Work pages, with links to GitHub, LinkedIn, and a resume."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="me" href="{{ $githubURL }}">
+<link rel="me" href="{{ $linkedinURL }}">
+<link rel="author" href="{{ $homeURL }}">
+<meta name="keywords" content="Aaditya Golash, UBC Computer Science, UBC Management, software engineering, product management, data analytics, computer vision, operations, British Columbia">

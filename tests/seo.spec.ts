@@ -16,6 +16,48 @@ test.describe('SEO, sharing metadata, and crawler basics', () => {
     await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', description);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/Aaditya_Golash\/$/);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /index/);
+    await expect(page.locator('meta[name="author"]')).toHaveAttribute('content', 'Aaditya Golash');
+    await expect(page.locator('meta[name="keywords"]')).toHaveAttribute('content', /Aaditya Golash/);
+    await expect(page.locator('link[rel="me"][href="https://github.com/Aaditya-Golash"]')).toHaveCount(1);
+    await expect(page.locator('link[rel="me"][href="https://linkedin.com/in/aaditya-golash"]')).toHaveCount(1);
+  });
+
+  test('homepage exposes Person, WebSite, and FAQ structured data', async ({ page }) => {
+    await page.goto(siteRoot);
+
+    await expect(page.getByRole('heading', { name: 'FAQ' })).toBeVisible();
+    await expect(page.getByText('Who is Aaditya Golash?')).toBeVisible();
+    await expect(page.getByText('Where is Aaditya Golash based?')).toBeVisible();
+
+    const graph = await page.locator('script[type="application/ld+json"]').first().textContent();
+    expect(graph).toBeTruthy();
+
+    const structuredData = JSON.parse(graph ?? '{}');
+    const nodes = structuredData['@graph'] ?? [];
+    const person = nodes.find((node: { '@type'?: string }) => node['@type'] === 'Person');
+    const website = nodes.find((node: { '@type'?: string }) => node['@type'] === 'WebSite');
+    const faq = nodes.find((node: { '@type'?: string }) => node['@type'] === 'FAQPage');
+
+    expect(person).toEqual(expect.objectContaining({
+      name: 'Aaditya Golash',
+      sameAs: expect.arrayContaining([
+        'https://github.com/Aaditya-Golash',
+        'https://linkedin.com/in/aaditya-golash',
+      ]),
+    }));
+    expect(person.hasCredential).toEqual(expect.arrayContaining([
+      'BSc Computer Science major, Management minor',
+      "Dean's List",
+      'Graduating with distinction',
+    ]));
+    expect(website).toEqual(expect.objectContaining({ name: 'Aaditya Golash Portfolio' }));
+    expect(faq.mainEntity).toHaveLength(4);
+    expect(faq.mainEntity.map((item: { name: string }) => item.name)).toEqual(expect.arrayContaining([
+      'Who is Aaditya Golash?',
+      'Where is Aaditya Golash based?',
+      'What roles is Aaditya Golash targeting?',
+      "Where can I see Aaditya Golash's work?",
+    ]));
   });
 
   test('primary and project pages have one visible h1 and canonical URLs', async ({ page }) => {
@@ -28,7 +70,7 @@ test.describe('SEO, sharing metadata, and crawler basics', () => {
       await page.goto(sitePath(route));
       await expect(page.locator('h1')).toHaveCount(1);
       await expect(page.locator('h1')).toBeVisible();
-      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/aaditya-golash\.github\.io\/Aaditya_Golash\//);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/Aaditya_Golash\//);
       await expect(page.locator('meta[name="description"], meta[property="og:description"]').first()).toHaveAttribute('content', /.+/);
     }
   });

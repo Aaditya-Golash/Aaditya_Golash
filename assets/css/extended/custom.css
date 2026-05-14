@@ -595,6 +595,35 @@ code,
     font-size: 0.88rem;
 }
 
+.faq-list {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 0.9rem;
+}
+
+.faq-list details {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 0.95rem;
+    background: color-mix(in srgb, var(--code-block-bg) 72%, transparent);
+}
+
+.faq-list summary {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.faq-list summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
+
+.faq-list p {
+    margin: 0.65rem 0 0;
+    color: var(--content);
+}
+
 .section-kicker {
     margin-top: -0.1rem;
     color: var(--secondary);
