@@ -9,7 +9,7 @@
   <p class="operator-subtitle">BSc Computer Science major + Management minor at UBC, building workflow, data, and product systems for real operational problems.</p>
   <div class="proof-strip" aria-label="Selected proof points">
     <span>Reduced TA allocation admin time by 70%</span>
-    <span>Oversaw $1.9M operating budget</span>
+    <span>Elected UBCSUO Director-at-Large overseeing $1.9M</span>
     <span>Built funded marketplace MVP</span>
   </div>
   <div class="operator-actions">
@@ -55,13 +55,38 @@
 </section>
 
 <section class="home-panel">
-  <pre class="section-divider" aria-hidden="true">--[ HOW I THINK ]-----------------------</pre>
-  <h2>How I Think</h2>
+  <pre class="section-divider" aria-hidden="true">--[ OPERATING PRINCIPLES ]--------------</pre>
+  <h2>Operating Principles</h2>
   <ul class="thinking-list">
     <li><strong>Start with friction.</strong> I look for workflows that are slow, unclear, or dependent on manual workarounds.</li>
     <li><strong>Design for constraints.</strong> I build around real users, existing processes, and the tradeoffs teams can actually support.</li>
     <li><strong>Measure what changed.</strong> I care about time saved, risk reduced, and decision quality improved.</li>
   </ul>
+</section>
+
+
+<section class="home-panel">
+  <pre class="section-divider" aria-hidden="true">--[ LEADERSHIP / COMMUNITY ]------------</pre>
+  <h2>Leadership & Community</h2>
+  <p class="section-kicker">Governance, budget, funding, and outreach work with clear operating scope.</p>
+  <div class="role-fit-grid">
+    <div>
+      <h3>UBCSUO Director-at-Large</h3>
+      <p>Elected representative for 12,000+ students; oversight across a $1.9M operating budget and $370K+ in club funding for 150+ organizations.</p>
+    </div>
+    <div>
+      <h3>Food Program Operations</h3>
+      <p>Led logistics and inventory workflows for a student food program serving 150+ students through recurring distribution cycles.</p>
+    </div>
+    <div>
+      <h3>Phi Delta Theta Philanthropy</h3>
+      <p>Managed fundraising initiatives, volunteer responsibilities, event logistics, and community-stakeholder communication.</p>
+    </div>
+    <div>
+      <h3>Public Safety Stakeholders</h3>
+      <p>Co-led HelpR emergency-response MVP and pitched hazard-mapping workflows to industry mentors and the Fire Chief of Alberta.</p>
+    </div>
+  </div>
 </section>
 
 <section class="home-panel faq-panel" id="faq">
@@ -129,7 +154,7 @@
     {{- $other := where site.RegularPages "Type" "posts" -}}
     {{- $other = where $other "Params.featured" false -}}
     {{- $other = sort $other "Weight" "asc" -}}
-    {{- range first 6 $other }}
+    {{- range first 10 $other }}
     <article class="featured-card">
       {{- with .Params.ascii_cover }}
       <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>

@@ -1,12 +1,12 @@
 ---
 title: "HelpR: Emergency Response Platform"
 date: 2023-12-15
-weight: 130
+weight: 86
 draft: false
 featured: false
 categories: ["product", "swe", "operations"]
 tags: ["Android", "Firebase", "HCI", "Public Safety", "UX"]
-description: "Co-led a real-time Android emergency update MVP using geolocation, crowdsourced reports, and Firebase."
+description: "Co-led a real-time Android emergency response MVP using geolocation, crowdsourced hazard reports, Firebase, and stakeholder pitching."
 system_group: "academic"
 role_alignment: ["Android", "HCI", "Public Safety"]
 ascii_cover: |-
@@ -26,7 +26,7 @@ During emergencies, local updates can be fragmented across social media, news, a
 HelpR was built during Startup Sprint UBCO as a real-time Android app for nearby emergency updates such as wildfires, accidents, and hazards.
 
 ## What I Built
-I co-led the concept, UX, and MVP development. We built an Android app with live geolocation, crowdsourced reports, community validation, sensor-driven alert concepts, and a real-time Firebase database.
+I co-led the concept, UX, stakeholder framing, and MVP development. We built an Android app with live geolocation, crowdsourced hazard reports, community validation, sensor-driven alert concepts, and a real-time Firebase database.
 
 ## Key Decisions
 - Designed for fast comprehension under crisis conditions.
@@ -41,13 +41,14 @@ I co-led the concept, UX, and MVP development. We built an Android app with live
 
 ## Impact
 - Built and pitched a public-safety MVP to industry mentors and the Fire Chief of Alberta.
-- Secured interest in potential municipal adaptation.
-- Gained experience turning HCI research, Android development, and crisis-use constraints into a usable prototype.
+- Secured interest in potential municipal adaptation by connecting technical scope to emergency-response operations.
+- Combined Android development, Firebase data flow, geolocation, crowdsourced reports, and HCI constraints into a usable prototype.
+- Practiced stakeholder-facing product communication for a high-trust public-safety use case.
 
 ## Tech Stack
-`Java` `Android Studio` `Firebase` `HCI` `UI/UX` `Wireframing`
+`Java` `Android Studio` `Firebase Realtime Database` `Geolocation` `HCI` `UI/UX` `Wireframing`
 
 ## Role Alignment
-- `Android`: Built core app interface and alert functionality.
-- `HCI`: Designed for accessibility and clarity under pressure.
-- `Public Safety`: Framed technical features around real emergency-response needs.
+- `Android`: Built core app interface and alert functionality for a real-time emergency workflow.
+- `HCI`: Designed for accessibility, speed, and clarity under pressure.
+- `Public Safety`: Framed technical features around real emergency-response stakeholder needs.

@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 export const siteRoot = process.env.SITE_BASE_PATH ?? '/Aaditya_Golash/';
 export const origin = process.env.SITE_ORIGIN ?? 'http://127.0.0.1:1313';
 
@@ -17,16 +20,11 @@ export const primaryPages = [
   { name: 'Contact', path: 'contact/' },
 ];
 
-export const projectPages = [
-  'eye-tracking-research/',
-  'calmora/',
-  'social-media-growth/',
-  'ancestry-searcher/',
-  'legal-summarizer-extension/',
-  'helpr/',
-  'ta-allocation-system/',
-  'venueworks/',
-  'soccer-net/',
-  'brain-connectivity/',
-  'certifications/',
-].map((path) => `posts/${path}`);
+const repoRoot = path.resolve(__dirname, '..');
+const postsDir = path.join(repoRoot, 'content', 'posts');
+
+export const projectPages = fs
+  .readdirSync(postsDir)
+  .filter((file) => file.endsWith('.md') && file !== '_index.md')
+  .sort()
+  .map((file) => `posts/${file.replace(/\.md$/, '/')}`);

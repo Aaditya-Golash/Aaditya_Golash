@@ -42,7 +42,8 @@ test.describe('Content freshness and portfolio hygiene', () => {
     const home = read('layouts/index.html');
 
     expect(home).toContain('Reduced TA allocation admin time by 70%');
-    expect(home).toContain('Oversaw $1.9M operating budget');
+    expect(home).toContain('Elected UBCSUO Director-at-Large overseeing $1.9M');
+    expect(home).toContain('Phi Delta Theta Philanthropy');
     expect(home).toContain('Built funded marketplace MVP');
     expect(home).toContain('Role Fit Snapshot');
     expect(home).toContain('Valid Canadian work permit');
