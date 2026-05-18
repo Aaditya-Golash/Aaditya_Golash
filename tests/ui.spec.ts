@@ -12,7 +12,7 @@ test.describe('Homepage UI and visual structure', () => {
       'BSc Computer Science major + Management minor at UBC, building workflow, data, and product systems for real operational problems.'
     );
     await expect(page.locator('.proof-strip')).toContainText('Reduced TA allocation admin time by 70%');
-    await expect(page.locator('.proof-strip')).toContainText('Oversaw $1.9M operating budget');
+    await expect(page.locator('.proof-strip')).toContainText('Elected UBCSUO Director-at-Large overseeing $1.9M');
     await expect(page.locator('.status-grid')).toContainText('Valid Canadian work permit');
     await expect(page.locator('.status-grid')).toContainText('Open to relocation');
 
@@ -36,9 +36,10 @@ test.describe('Homepage UI and visual structure', () => {
   test('project cards render featured and other sections consistently', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Featured Impact' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Additional Work' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Leadership & Community' })).toBeVisible();
 
     const featuredCards = page.locator('.featured-grid >> article.featured-card');
-    await expect(featuredCards).toHaveCount(10);
+    await expect(featuredCards).toHaveCount(14);
     await expect(featuredCards.first()).toContainText('View Project');
   });
 });

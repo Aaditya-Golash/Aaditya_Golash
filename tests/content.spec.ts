@@ -38,11 +38,26 @@ test.describe('Content freshness and portfolio hygiene', () => {
     }
   });
 
+
+  test('private profile view page is unlinked and noindexed', () => {
+    const profile = read('content/profile-view.md');
+    const head = read('layouts/partials/extend_head.html');
+    const home = read('layouts/index.html');
+    const config = read('hugo.toml');
+
+    expect(profile).toContain('layout: "profile-view"');
+    expect(profile).toContain('private: true');
+    expect(head).toContain('noindex,nofollow,noarchive');
+    expect(home).not.toContain('profile-view/');
+    expect(config).not.toContain('profile-view/');
+  });
+
   test('homepage copy keeps the strongest proof points visible', () => {
     const home = read('layouts/index.html');
 
     expect(home).toContain('Reduced TA allocation admin time by 70%');
-    expect(home).toContain('Oversaw $1.9M operating budget');
+    expect(home).toContain('Elected UBCSUO Director-at-Large overseeing $1.9M');
+    expect(home).toContain('Phi Delta Theta Philanthropy');
     expect(home).toContain('Built funded marketplace MVP');
     expect(home).toContain('Role Fit Snapshot');
     expect(home).toContain('Valid Canadian work permit');

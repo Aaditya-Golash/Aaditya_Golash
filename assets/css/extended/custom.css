@@ -829,6 +829,14 @@ code,
 @media screen and (max-width: 360px) {
     .hero-ascii,
     .section-divider {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        word-break: break-word;
         font-size: 0.66rem;
     }
 
@@ -844,4 +852,112 @@ code,
         color: var(--primary);
         text-shadow: none;
     }
+}
+
+.profile-view-panel {
+    margin: 1rem 0 1.35rem;
+    padding: 1.1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--entry) 95%, transparent);
+}
+
+.profile-view-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.profile-view-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem;
+    background: color-mix(in srgb, var(--code-block-bg) 74%, transparent);
+}
+
+.profile-view-card strong {
+    display: block;
+    color: var(--secondary);
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.profile-view-card span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.profile-view-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.profile-view-form label {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--secondary);
+    font-size: 0.82rem;
+}
+
+.profile-view-form input,
+.profile-view-form select,
+.profile-view-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.65rem;
+    background: var(--code-block-bg);
+    color: var(--content);
+}
+
+.profile-view-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.profile-view-table-wrap {
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.profile-view-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    color: var(--content);
+}
+
+.profile-view-table th,
+.profile-view-table td {
+    border: 1px solid var(--border);
+    padding: 0.55rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.profile-view-table th {
+    color: var(--primary);
+    background: color-mix(in srgb, var(--code-block-bg) 88%, transparent);
+}
+
+.profile-view-note {
+    color: var(--secondary);
+    font-size: 0.86rem;
+}
+
+.profile-view-locked [data-private-dashboard] {
+    display: none;
+}
+
+.profile-view-unlocked [data-unlock-panel] {
+    display: none;
 }
