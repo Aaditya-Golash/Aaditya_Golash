@@ -826,17 +826,20 @@ code,
     }
 }
 
-@media screen and (max-width: 360px) {
-    .hero-ascii,
-    .section-divider {
-        display: block;
+@media screen and (max-width: 375px) {
+    pre {
         max-width: 100%;
-        width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
         white-space: pre-wrap;
         overflow-wrap: anywhere;
         word-break: break-word;
+    }
+
+    .hero-ascii,
+    .section-divider {
+        display: block;
+        width: 100%;
         font-size: 0.66rem;
     }
 
