@@ -1,0 +1,239 @@
+{{ define "main" }}
+<article class="post-single profile-view-locked" id="profile-view-app">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <p class="terminal-line">&gt; private profile console</p>
+    <h1 class="post-title entry-hint-parent" id="profile-greeting">Hi Aaditya.</h1>
+    <div class="post-description">
+      Local profile-link dashboard for personalized greetings, unique-view counts, source/referrer metadata, and recent visit context.
+    </div>
+  </header>
+
+  <section class="profile-view-panel" data-unlock-panel>
+    <h2>Unlock owner view</h2>
+    <p class="profile-view-note">
+      This is a static-site privacy gate: the page is unlinked and noindexed, but true private analytics still requires a server-side gate such as Cloudflare Access, Netlify password protection, or an analytics provider dashboard.
+    </p>
+    <form class="profile-view-form" id="profile-unlock-form">
+      <label>
+        Owner passphrase
+        <input id="profile-passphrase" type="password" autocomplete="current-password" placeholder="Set or enter passphrase">
+      </label>
+    </form>
+    <div class="profile-view-actions">
+      <button class="retro-btn" type="button" id="profile-unlock">Unlock</button>
+      <button class="retro-btn" type="button" id="profile-reset-passphrase">Reset Local Gate</button>
+    </div>
+    <p class="contact-status" id="profile-lock-status" aria-live="polite"></p>
+  </section>
+
+  <div data-private-dashboard>
+    <section class="profile-view-panel">
+      <h2>Personalized Link Builder</h2>
+      <p class="profile-view-note">Use query parameters to make links feel direct, for example: <code>?name=Sam&amp;company=Shopify&amp;source=linkedin</code>.</p>
+      <form class="profile-view-form" id="profile-link-form">
+        <label>Name<input id="profile-name" name="name" placeholder="Recruiter or hiring manager"></label>
+        <label>Company<input id="profile-company" name="company" placeholder="Company"></label>
+        <label>Role<input id="profile-role" name="role" placeholder="APM, SWE, Data, Ops"></label>
+        <label>Source<input id="profile-source" name="source" placeholder="linkedin, email, resume"></label>
+      </form>
+      <div class="profile-view-actions">
+        <button class="retro-btn" type="button" id="profile-save-link">Update Greeting</button>
+        <button class="retro-btn" type="button" id="profile-copy-link">Copy Link</button>
+      </div>
+      <p class="contact-status" id="profile-link-status" aria-live="polite"></p>
+    </section>
+
+    <section class="profile-view-panel">
+      <h2>View Snapshot</h2>
+      <div class="profile-view-grid" aria-label="Profile analytics summary">
+        <div class="profile-view-card"><strong>Total visits</strong><span id="metric-visits">0</span></div>
+        <div class="profile-view-card"><strong>Unique browsers</strong><span id="metric-unique">0</span></div>
+        <div class="profile-view-card"><strong>Top source</strong><span id="metric-source">—</span></div>
+        <div class="profile-view-card"><strong>Latest timezone</strong><span id="metric-timezone">—</span></div>
+      </div>
+      <p class="profile-view-note">Location is approximated from timezone, language, referrer, and source parameters. Browser-only storage cannot identify exact geography or centralize views across devices.</p>
+    </section>
+
+    <section class="profile-view-panel">
+      <h2>Recent Visit Context</h2>
+      <div class="profile-view-table-wrap">
+        <table class="profile-view-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Name / Company</th>
+              <th>Source</th>
+              <th>Referrer</th>
+              <th>Context</th>
+            </tr>
+          </thead>
+          <tbody id="profile-events"></tbody>
+        </table>
+      </div>
+      <div class="profile-view-actions">
+        <button class="retro-btn" type="button" id="profile-export">Export JSON</button>
+        <button class="retro-btn" type="button" id="profile-clear">Clear Local Data</button>
+      </div>
+    </section>
+  </div>
+</article>
+
+<script>
+(() => {
+  const app = document.getElementById('profile-view-app');
+  const params = new URLSearchParams(window.location.search);
+  const storeKey = 'ag_profile_view_events';
+  const visitorKey = 'ag_profile_view_visitor_id';
+  const passKey = 'ag_profile_view_pass_hash';
+  const unlockedKey = 'ag_profile_view_unlocked';
+  const $ = (id) => document.getElementById(id);
+  const text = (value, fallback = '—') => value && String(value).trim() ? String(value).trim() : fallback;
+  const escapeHtml = (value) => text(value).replace(/[&<>\"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[char]));
+
+  const digest = async (value) => {
+    const bytes = new TextEncoder().encode(value);
+    const hash = await crypto.subtle.digest('SHA-256', bytes);
+    return [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  };
+
+  const getEvents = () => JSON.parse(localStorage.getItem(storeKey) || '[]');
+  const setEvents = (events) => localStorage.setItem(storeKey, JSON.stringify(events.slice(-250)));
+  const visitorId = localStorage.getItem(visitorKey) || crypto.randomUUID();
+  localStorage.setItem(visitorKey, visitorId);
+
+  const unlock = () => {
+    app.classList.remove('profile-view-locked');
+    app.classList.add('profile-view-unlocked');
+    sessionStorage.setItem(unlockedKey, 'true');
+    recordVisit();
+    render();
+  };
+
+  const updateGreeting = () => {
+    const name = $('profile-name').value || params.get('name') || 'Aaditya';
+    $('profile-greeting').textContent = `Hi ${name}.`;
+  };
+
+  const recordVisit = () => {
+    if (sessionStorage.getItem('ag_profile_view_recorded') === window.location.href) return;
+    const event = {
+      id: crypto.randomUUID(),
+      visitorId,
+      timestamp: new Date().toISOString(),
+      name: params.get('name') || $('profile-name').value || '',
+      company: params.get('company') || $('profile-company').value || '',
+      role: params.get('role') || $('profile-role').value || '',
+      source: params.get('source') || params.get('utm_source') || $('profile-source').value || 'direct',
+      referrer: document.referrer || 'direct',
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+      language: navigator.language || '',
+      platform: navigator.platform || '',
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      screen: `${screen.width}x${screen.height}`,
+      path: `${location.pathname}${location.search}`,
+    };
+    setEvents([...getEvents(), event]);
+    sessionStorage.setItem('ag_profile_view_recorded', window.location.href);
+  };
+
+  const mostCommon = (items) => {
+    const counts = items.reduce((acc, item) => {
+      const key = text(item, 'direct');
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+    return Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || '—';
+  };
+
+  const render = () => {
+    const events = getEvents();
+    $('metric-visits').textContent = events.length;
+    $('metric-unique').textContent = new Set(events.map((event) => event.visitorId)).size;
+    $('metric-source').textContent = mostCommon(events.map((event) => event.source));
+    $('metric-timezone').textContent = events.at(-1)?.timezone || '—';
+    $('profile-events').innerHTML = events.slice(-20).reverse().map((event) => `
+      <tr>
+        <td>${new Date(event.timestamp).toLocaleString()}</td>
+        <td>${escapeHtml(event.name)}<br>${escapeHtml(event.company)}</td>
+        <td>${escapeHtml(event.source)}</td>
+        <td>${escapeHtml(event.referrer)}</td>
+        <td>${escapeHtml(event.role)}<br>${escapeHtml(event.timezone)} · ${escapeHtml(event.language)} · ${escapeHtml(event.viewport)}</td>
+      </tr>
+    `).join('') || '<tr><td colspan="5">No local visits recorded yet.</td></tr>';
+  };
+
+  ['name', 'company', 'role', 'source'].forEach((field) => {
+    const input = $(`profile-${field}`);
+    input.value = params.get(field) || params.get(`utm_${field}`) || localStorage.getItem(`ag_profile_${field}`) || '';
+  });
+  updateGreeting();
+
+  $('profile-unlock').addEventListener('click', async () => {
+    const passphrase = $('profile-passphrase').value.trim();
+    if (!passphrase) {
+      $('profile-lock-status').textContent = 'Enter a passphrase to set or unlock this browser.';
+      $('profile-lock-status').className = 'contact-status is-warn';
+      return;
+    }
+    const hash = await digest(passphrase);
+    const savedHash = localStorage.getItem(passKey);
+    if (!savedHash) {
+      localStorage.setItem(passKey, hash);
+      $('profile-lock-status').textContent = 'Local gate created for this browser.';
+      $('profile-lock-status').className = 'contact-status is-success';
+      unlock();
+      return;
+    }
+    if (hash === savedHash) {
+      unlock();
+    } else {
+      $('profile-lock-status').textContent = 'Passphrase did not match this browser gate.';
+      $('profile-lock-status').className = 'contact-status is-error';
+    }
+  });
+
+  $('profile-reset-passphrase').addEventListener('click', () => {
+    localStorage.removeItem(passKey);
+    sessionStorage.removeItem(unlockedKey);
+    $('profile-lock-status').textContent = 'Local gate reset. Enter a new passphrase to recreate it.';
+    $('profile-lock-status').className = 'contact-status is-warn';
+  });
+
+  $('profile-save-link').addEventListener('click', () => {
+    ['name', 'company', 'role', 'source'].forEach((field) => localStorage.setItem(`ag_profile_${field}`, $(`profile-${field}`).value));
+    updateGreeting();
+    $('profile-link-status').textContent = 'Greeting updated locally.';
+    $('profile-link-status').className = 'contact-status is-success';
+  });
+
+  $('profile-copy-link').addEventListener('click', async () => {
+    const link = new URL(window.location.href);
+    ['name', 'company', 'role', 'source'].forEach((field) => {
+      const value = $(`profile-${field}`).value.trim();
+      if (value) link.searchParams.set(field, value);
+      else link.searchParams.delete(field);
+    });
+    await navigator.clipboard.writeText(link.toString());
+    $('profile-link-status').textContent = 'Personalized link copied.';
+    $('profile-link-status').className = 'contact-status is-success';
+  });
+
+  $('profile-export').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(getEvents(), null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'profile-view-events.json';
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+
+  $('profile-clear').addEventListener('click', () => {
+    setEvents([]);
+    render();
+  });
+
+  if (sessionStorage.getItem(unlockedKey) === 'true') unlock();
+})();
+</script>
+{{ end }}

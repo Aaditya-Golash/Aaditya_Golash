@@ -100,3 +100,7 @@
 <link rel="me" href="{{ $linkedinURL }}">
 <link rel="author" href="{{ $homeURL }}">
 <meta name="keywords" content="Aaditya Golash, UBC Computer Science, UBC Management, software engineering, product management, data analytics, computer vision, operations, British Columbia">
+{{- if .Params.private }}
+<meta name="robots" content="noindex,nofollow,noarchive">
+{{- end }}
+

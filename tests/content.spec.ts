@@ -38,6 +38,20 @@ test.describe('Content freshness and portfolio hygiene', () => {
     }
   });
 
+
+  test('private profile view page is unlinked and noindexed', () => {
+    const profile = read('content/profile-view.md');
+    const head = read('layouts/partials/extend_head.html');
+    const home = read('layouts/index.html');
+    const config = read('hugo.toml');
+
+    expect(profile).toContain('layout: "profile-view"');
+    expect(profile).toContain('private: true');
+    expect(head).toContain('noindex,nofollow,noarchive');
+    expect(home).not.toContain('profile-view/');
+    expect(config).not.toContain('profile-view/');
+  });
+
   test('homepage copy keeps the strongest proof points visible', () => {
     const home = read('layouts/index.html');
 
