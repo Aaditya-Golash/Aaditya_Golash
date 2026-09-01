@@ -55,10 +55,10 @@ test.describe('Content freshness and portfolio hygiene', () => {
   test('homepage copy keeps the strongest proof points visible', () => {
     const home = read('layouts/index.html');
 
+    expect(home).toContain('Built and deployed DealerSignal');
     expect(home).toContain('Reduced TA allocation admin time by 70%');
-    expect(home).toContain('Elected UBCSUO Director-at-Large overseeing $1.9M');
+    expect(home).toContain('Grew digital brands to 4M+ organic views');
     expect(home).toContain('Phi Delta Theta Philanthropy');
-    expect(home).toContain('Built funded marketplace MVP');
     expect(home).toContain('Role Fit Snapshot');
     expect(home).toContain('Valid Canadian work permit');
     expect(home).toContain('Open to relocation');

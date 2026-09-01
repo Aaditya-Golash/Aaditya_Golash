@@ -3,7 +3,7 @@ title: "UBCSUO Director-at-Large: $1.9M Governance"
 date: 2026-03-10
 weight: 40
 draft: false
-featured: true
+featured: false
 categories: ["product", "data", "operations"]
 tags: ["Director-at-Large", "Financial Analysis", "Governance", "Risk Management", "Policy Development"]
 description: "Served as an elected UBCSUO Director-at-Large, overseeing a $1.9M operating budget, $370K+ in club funding, and policy decisions for 12,000+ students."

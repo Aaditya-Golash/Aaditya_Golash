@@ -1,16 +1,16 @@
 {{- define "main" -}}
 <section class="operator-hero">
   <pre class="hero-ascii" aria-hidden="true">
-  .--[ SYSTEMS / PRODUCT / DATA ]--.
+  .--[ SOFTWARE / SYSTEMS / AI TOOLING ]--.
   | scan role -> show proof -> open work |
-  '-------------------------------------'
+  '-----------------------------------------'
   </pre>
   <h1 class="operator-title">Aaditya Golash</h1>
-  <p class="operator-subtitle">BSc Computer Science major + Management minor at UBC, building workflow, data, and product systems for real operational problems.</p>
+  <p class="operator-subtitle">UBC Computer Science graduate with a Management minor, building software, workflow systems, and AI tooling for real operational problems.</p>
   <div class="proof-strip" aria-label="Selected proof points">
+    <span>Built and deployed DealerSignal across Angular and Express</span>
     <span>Reduced TA allocation admin time by 70%</span>
-    <span>Elected UBCSUO Director-at-Large overseeing $1.9M</span>
-    <span>Built funded marketplace MVP</span>
+    <span>Grew digital brands to 4M+ organic views</span>
   </div>
   <div class="operator-actions">
     <a class="retro-btn" href="{{ "systems/" | relLangURL }}">View Projects</a>
@@ -25,31 +25,31 @@
   <pre class="section-divider" aria-hidden="true">--[ ROLE FIT ]--------------------------</pre>
   <h2>Role Fit Snapshot</h2>
   <p>
-    I fit roles where technical systems, user workflows, and operating constraints meet: APM, software engineering, data/analytics, operations, and consulting-adjacent work.
+    I fit engineering teams where software architecture, user workflows, AI tooling, and operating constraints meet.
   </p>
   <div class="status-grid" aria-label="Career status and work authorization">
-    <span>Graduating with distinction; Dean's List</span>
-    <span>UBC Co-op student</span>
-    <span>Based in British Columbia</span>
+    <span>UBC graduate with distinction; Dean's List</span>
+    <span>BSc Computer Science; Management minor</span>
+    <span>Based in Canada</span>
     <span>Valid Canadian work permit and driver's licence</span>
     <span>Open to relocation</span>
   </div>
   <div class="role-fit-grid">
     <div>
-      <h3>Product / APM</h3>
-      <p>Market validation, roadmap tradeoffs, stakeholder discovery, MVP scoping.</p>
+      <h3>Software / Systems</h3>
+      <p>TypeScript, Python, APIs, state boundaries, testing, deployment, and workflow architecture.</p>
     </div>
     <div>
-      <h3>SWE / Systems</h3>
-      <p>Python, TypeScript, React, Flask, MySQL, Docker, testing, automation.</p>
+      <h3>AI Tooling / Agents</h3>
+      <p>MCP servers, agent skills, structured context, approval gates, and auditable automation.</p>
     </div>
     <div>
-      <h3>Data / Analytics</h3>
-      <p>Signal processing, computer vision, forecasting, dashboards, KPI design.</p>
+      <h3>Data / Research</h3>
+      <p>Signal processing, computer vision, analytical pipelines, and interpretable decision support.</p>
     </div>
     <div>
-      <h3>Operations</h3>
-      <p>Workflow redesign, governance, budget oversight, service reliability.</p>
+      <h3>Product / Operations</h3>
+      <p>Friction mapping, MVP scope, workflow redesign, governance, and service reliability.</p>
     </div>
   </div>
 </section>
@@ -95,15 +95,15 @@
   <div class="faq-list">
     <details open>
       <summary>Who is Aaditya Golash?</summary>
-      <p>Aaditya Golash is a UBC BSc Computer Science major and Management minor focused on software, product, data, operations, and workflow systems.</p>
+      <p>Aaditya Golash is a UBC Computer Science graduate with a Management minor focused on software, systems, AI tooling, and workflow automation.</p>
     </details>
     <details>
       <summary>Where is Aaditya Golash based?</summary>
-      <p>I am based in British Columbia, Canada, hold a valid Canadian work permit and driver's licence, and am open to relocation.</p>
+      <p>I am based in Canada, hold a valid Canadian work permit and driver's licence, and am open to relocation.</p>
     </details>
     <details>
       <summary>What roles is Aaditya Golash targeting?</summary>
-      <p>I fit roles where software engineering, product thinking, data analytics, operations, and stakeholder workflows meet.</p>
+      <p>I fit software engineering and technical product environments where architecture, AI tooling, data, and operational workflows meet.</p>
     </details>
     <details>
       <summary>Where can I see Aaditya Golash's work?</summary>
@@ -120,7 +120,7 @@
     {{- $featured := where site.RegularPages "Type" "posts" -}}
     {{- $featured = where $featured "Params.featured" true -}}
     {{- $featured = sort $featured "Weight" "asc" -}}
-    {{- range first 4 $featured }}
+    {{- range first 6 $featured }}
     <article class="featured-card">
       {{- with .Params.ascii_cover }}
       <pre class="ascii-cover-art featured-ascii" aria-hidden="true">{{ . }}</pre>
@@ -149,7 +149,7 @@
 <section class="home-panel">
   <pre class="section-divider" aria-hidden="true">--[ MORE SIGNAL ]-----------------------</pre>
   <h2>Additional Work</h2>
-  <p class="section-kicker">More technical, product, research, and growth work from the full portfolio.</p>
+  <p class="section-kicker">Research, product, operational, leadership, and growth work beyond the featured engineering projects.</p>
   <div class="featured-grid">
     {{- $other := where site.RegularPages "Type" "posts" -}}
     {{- $other = where $other "Params.featured" false -}}

@@ -348,6 +348,35 @@ code,
     margin-top: 1.25rem;
 }
 
+.case-ascii {
+    margin: 1.25rem 0 1.55rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    background: color-mix(in srgb, var(--code-block-bg) 92%, transparent);
+}
+
+.case-ascii figcaption {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.case-ascii pre {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border: 0;
+    background: transparent !important;
+    color: var(--primary) !important;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    overflow-x: auto;
+    white-space: pre;
+}
+
 .ascii-cover-title {
     color: var(--primary);
     font-weight: 700;
@@ -809,11 +838,26 @@ code,
     }
 
     .hero-ascii {
-        font-size: 0.78rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 0.72rem;
     }
 
     .featured-ascii {
         display: none;
+    }
+
+    .case-ascii pre {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        font-size: 0.68rem;
     }
 
     .proof-strip {

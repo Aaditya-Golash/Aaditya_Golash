@@ -1,9 +1,9 @@
 ---
 title: "VenueWorks: Commercial Space Marketplace"
 date: 2026-03-05
-weight: 30
+weight: 35
 draft: false
-featured: true
+featured: false
 categories: ["product", "swe", "operations"]
 tags: ["Entrepreneurship", "Product Management", "SaaS", "Market Validation"]
 description: "Co-founded a commercial-space marketplace MVP, identified $5M+ in idle annual venue capacity, and secured $1,500 in UBC funding."

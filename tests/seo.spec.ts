@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { primaryPages, projectPages, sitePath, siteRoot } from './site';
 
 const description =
-  'UBC BSc Computer Science major and Management minor building workflow, data, and product systems for real operational problems.';
+  'UBC Computer Science graduate building software, workflow systems, and AI tooling for real operational problems.';
 
 test.describe('SEO, sharing metadata, and crawler basics', () => {
   test('homepage exposes useful metadata for recruiters and link previews', async ({ page }) => {
@@ -46,9 +46,9 @@ test.describe('SEO, sharing metadata, and crawler basics', () => {
       ]),
     }));
     expect(person.hasCredential).toEqual(expect.arrayContaining([
-      'BSc Computer Science major, Management minor',
+      'BSc Computer Science, Management minor',
       "Dean's List",
-      'Graduating with distinction',
+      'Graduated with distinction',
     ]));
     expect(website).toEqual(expect.objectContaining({ name: 'Aaditya Golash Portfolio' }));
     expect(faq.mainEntity).toHaveLength(4);

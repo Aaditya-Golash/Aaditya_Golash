@@ -1,5 +1,5 @@
 ---
-title: "System Architecture: TA Allocation & Management"
+title: "TA Allocation System: Workflow Architecture"
 date: 2025-08-15
 weight: 10
 draft: false

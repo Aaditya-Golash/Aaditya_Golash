@@ -1,7 +1,7 @@
 ---
 title: "Eye-Tracking Research: Computer Vision & HCI"
 date: 2026-01-15
-weight: 20
+weight: 30
 draft: false
 featured: true
 categories: ["swe", "data"]

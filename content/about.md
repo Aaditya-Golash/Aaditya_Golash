@@ -6,22 +6,24 @@ draft: false
 
 ## About
 
-> `> PROFILE: BSC_CS_MAJOR / MANAGEMENT_MINOR`
-> `> FOCUS: PRODUCT / SOFTWARE / DATA / OPERATIONS`
-> `> STATUS: UBC_COOP / DISTINCTION / DEANS_LIST`
+> `> PROFILE: BSC_COMPUTER_SCIENCE / MANAGEMENT_MINOR`
+> `> FOCUS: SOFTWARE / SYSTEMS / AI_TOOLING`
+> `> STATUS: UBC_GRAD / DISTINCTION / DEANS_LIST`
 
-I am a final-year UBC Co-op student completing a BSc with a Computer Science major and Management minor, graduating with distinction and Dean's List standing. I am based in British Columbia, hold a valid Canadian work permit and driver's licence, and am open to relocation.
+I am a UBC Okanagan graduate with a BSc in Computer Science and a Management minor, graduating with distinction and Dean's List standing.
 
-I build practical systems across software, product, data, and operations. The common thread is turning messy workflows into tools, processes, or analyses that people can actually use.
+I like building software where product decisions, system architecture, and implementation are tightly connected. A lot of my work starts with the same question: where is the friction, and what is the smallest useful system that can remove it?
 
-I grew up between India and the Middle East, which shaped how I think about structure, adaptation, and the gap between how things are supposed to work and how they actually work.
+That has led me to build full-stack applications, workflow automation, developer tooling, research pipelines, and operational systems. I enjoy taking something messy or manual, finding the real source of truth, deciding where the logic should live, and turning it into something people can actually use.
 
-A lot of my work starts the same way. I notice something that is slow, messy, fragmented, or harder than it needs to be, and I try to improve it. Sometimes that becomes a full system. Sometimes it becomes a smaller tool or a better process. Either way, I like solving problems where code, people, and decisions all interact.
+I am especially interested in fast-moving engineering environments where developers can own problems end to end. I use tools like Claude, ChatGPT, and Gemini heavily for coding, debugging, research, and architecture exploration, but I care just as much about understanding why a system works, how data moves through it, where state belongs, and how it should evolve beyond the prototype.
 
-That is why my work cuts across a few areas. I have built technical systems, research pipelines, marketplace MVPs, campus operations workflows, and governance structures. Across all of them, I keep coming back to the same question: where is the friction, and what is the best way to reduce it?
+I grew up between India and the Middle East and later studied and worked in Kelowna through UBC Okanagan. Moving between different environments shaped how I think about adaptation, structure, and the gap between how systems are supposed to work and how they actually work.
 
-I have also experimented with social media and audience growth. A few projects reached a couple million views, which taught me a lot about feedback loops, attention, and the difference between what people say and what they actually respond to.
+I have also experimented with digital brands and audience growth, with projects reaching millions of organic views. That taught me a lot about feedback loops, attention, iteration, and the difference between what people say they want and what they actually respond to.
 
-Outside of work, I like traveling, food, LEGO, and anything that involves movement or water. Swimming and paddleboarding are still the easiest way for me to reset, and Oscar, my dog, helps keep everything in perspective.
+Outside of software, I like cars, travelling, cooking, working out, learning languages, LEGO, and anything involving water. My favourite car is the Mercedes-Benz 300 SL Gullwing, preferably red.
+
+Swimming and paddleboarding are still some of the easiest ways for me to reset, and Oscar, my dog, helps keep everything in perspective.
 
 If something here overlaps with what you are building or thinking about, feel free to reach out.

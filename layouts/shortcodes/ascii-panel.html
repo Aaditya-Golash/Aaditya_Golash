@@ -1,0 +1,6 @@
+<figure class="case-ascii">
+  {{- with .Get "label" }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+  <pre{{ with .Get "label" }} aria-label="{{ . }}"{{ end }}>{{ .Inner | strings.TrimSpace }}</pre>
+</figure>
